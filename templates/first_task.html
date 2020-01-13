@@ -3,18 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <title>First task</title>
+    <script>
+        setTimeout(function () {
+            window.location.href = 'calming_content';
+        }, 5000);
+    </script>
 </head>
 <body>
 <h1>This is the first task.</h1>
 Please watch the video.
 <p>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/pUbmOA1r1Nc?autoplay=1&start=20&controls=0"
-            frameborder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<!--    <iframe width="560" height="315" src="https://www.youtube.com/embed/pUbmOA1r1Nc?autoplay=1&start=20&controls=0"-->
+<!--            frameborder="0"-->
+<!--            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
+    <video width="560" height="315" controls autoplay>
+<!--        <source src="static/videos/video_test_task_1.mp4" type="video/mp4">-->
+        <source src={{ url_for('static', filename="videos/video_test_task_1.mp4")}} type="video/mp4">
+    </video>
 </p>
-Please click here to continue the session.
-<p>
-    <a href="calming_content">LINK --> </a>
-</p>
+<!--Please click here to continue the session.-->
+<!--<p>-->
+<!--    <a href="calming_content">LINK &ndash;&gt; </a>-->
+<!--</p>-->
 </body>
 </html>

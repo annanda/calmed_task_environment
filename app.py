@@ -18,5 +18,10 @@ def first_task():
     return render_template('first_task.html')
 
 
+@app.route('/calming_content', methods=['GET'])
+def calming_content():
+    return render_template('calming_content.html')
+
+
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=90)

@@ -1,12 +1,25 @@
 from flask import Flask, render_template
+from models import db, User
 
 app = Flask(__name__, template_folder="./templates", static_folder='static')
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///saved-times.db'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+db.init_app(app)
 
 
 @app.route('/', methods=['GET'])
 def index_page():
     info = {}
+    adding_db()
     return render_template('index.html', **info)
+
+
+def adding_db():
+    admin = User(username='admin', email='admin@example.com')
+    guest = User(username='guest', email='guest@example.com')
+    db.session.add(admin)
+    db.session.add(guest)
+    db.session.commit()
 
 
 @app.route('/first_task', methods=['GET'])
@@ -56,5 +69,13 @@ def ending():
     return render_template('ending.html')
 
 
+@app.route('/store_timestamp', methods=['POST'])
+def store_timestamp():
+    pass
+
+
 if __name__ == '__main__':
+    app.app_context().push()
+    db.drop_all()
+    db.create_all()
     app.run(debug=True, host='0.0.0.0', port=90)

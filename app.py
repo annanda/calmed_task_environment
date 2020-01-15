@@ -15,8 +15,8 @@ def index_page():
 
 
 def adding_db():
-    admin = User(username='admin', email='admin@example.com')
-    guest = User(username='guest', email='guest@example.com')
+    admin = User(username='admin6', email='admin6@example.com')
+    guest = User(username='guest6', email='guest6@example.com')
     db.session.add(admin)
     db.session.add(guest)
     db.session.commit()
@@ -75,7 +75,7 @@ def store_timestamp():
 
 
 if __name__ == '__main__':
-    app.app_context().push()
-    db.drop_all()
-    db.create_all()
+    # app.app_context().push()
+    # db.drop_all()
+    # db.create_all()
     app.run(debug=True, host='0.0.0.0', port=90)

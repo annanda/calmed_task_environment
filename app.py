@@ -1,5 +1,6 @@
 from flask import Flask, render_template
-from models import db, User
+from models import db, TaskTime
+from datetime import datetime
 
 app = Flask(__name__, template_folder="./templates", static_folder='static')
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///saved-times.db'
@@ -10,25 +11,28 @@ db.init_app(app)
 @app.route('/', methods=['GET'])
 def index_page():
     info = {}
-    adding_db()
+    timestamp = datetime.now()
+    adding_db('index_page', timestamp)
     return render_template('index.html', **info)
 
 
-def adding_db():
-    admin = User(username='admin6', email='admin6@example.com')
-    guest = User(username='guest6', email='guest6@example.com')
-    db.session.add(admin)
-    db.session.add(guest)
+def adding_db(task, timestamp):
+    db_new_entry = TaskTime(task=task, timestamp=timestamp)
+    db.session.add(db_new_entry)
     db.session.commit()
 
 
 @app.route('/first_task', methods=['GET'])
 def first_task():
+    timestamp = datetime.now()
+    adding_db('first_task', timestamp)
     return render_template('first_task.html')
 
 
 @app.route('/calming_content', methods=['GET'])
 def calming_content():
+    timestamp = datetime.now()
+    adding_db('calming_content', timestamp)
     return render_template('calming_content.html')
 
 
@@ -75,7 +79,8 @@ def store_timestamp():
 
 
 if __name__ == '__main__':
-    # app.app_context().push()
-    # db.drop_all()
-    # db.create_all()
+    # TODO comment the lines below
+    app.app_context().push()
+    db.drop_all()
+    db.create_all()
     app.run(debug=True, host='0.0.0.0', port=90)

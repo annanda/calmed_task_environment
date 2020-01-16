@@ -2,28 +2,25 @@
 <html lang="en">
 <head>
     {% include 'header.html' %}
-
+    <script type="text/javascript" src="../static/quiz.js"></script>
+    <link rel="stylesheet" type="text/css" href="../static/quiz.css">
 </head>
 <body>
 <div id="wrapper">
     <div id="content">
-        <h1>This is the third task</h1>
-        <p id="instruction"> Please watch the video below</p>
-        <p>
-            <iframe width="650" height="365"
-                    src="https://www.youtube.com/embed/QxSKKtUdAjU?controls=0&amp;start=11&autoplay=1"
-                    frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen></iframe>
-        </p>
-        <!--Please click here to continue the session.-->
-        <!--<p>-->
-        <!--    <a href="calming_content_3">LINK &ndash;&gt; </a>-->
-        <!--</p>-->
+        <div class="quiz-container">
+            <div id="quiz"></div>
+        </div>
+        <button id="previous">Previous Question</button>
+        <button id="next">Next Question</button>
+        <button id="submit">Submit Quiz</button>
+        <div id="results"></div>
+
     </div>
 </div>
 <script>
     setTimeout(function () {
-        window.location.href = 'calming_content_3';
+        // window.location.href = 'calming_content_3';
     }, 5000);
 </script>
 </body>

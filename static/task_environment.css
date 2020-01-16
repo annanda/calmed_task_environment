@@ -53,7 +53,7 @@ h1 {
     display: inline;
 }
 
-video {
+video, iframe {
     display: block;
     margin: 0 auto;
 }

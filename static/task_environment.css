@@ -33,6 +33,15 @@
 
 }
 
+#content_ending{
+    width: 700px;
+    height: 500px;
+    background-image: url("images/background_image_end.png");
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+}
+
 #wrapper {
     width: 800px;
     height: 600px;
@@ -57,7 +66,7 @@ video, iframe {
     display: block;
     margin: 0 auto;
 }
-p#instruction{
+p#instruction, h1#instruction{
     text-align: center;
     width: 700px;
     font-size: 40px;

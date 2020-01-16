@@ -1,28 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Calming content</title>
-    <script>
-        setTimeout(function () {
-            window.location.href = 'forth_task';
-        }, 5000);
-    </script>
+    {% include 'header.html' %}
+
 </head>
 <body>
-<h1>This is the calming content between tasks</h1>
-Please watch the video.
-<p>
-<!--    <iframe width="560" height="315" src="https://www.youtube.com/embed/pUbmOA1r1Nc?autoplay=1&start=20&controls=0"-->
-<!--            frameborder="0"-->
-<!--            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/9A0S54yAgEg?controls=0&start=13&autoplay=1"
-            frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen></iframe>
-</p>
-<!--Please click here to continue the session.-->
-<!--<p>-->
-<!--    <a href="forth_task">LINK &ndash;&gt; </a>-->
-<!--</p>-->
+<div id="wrapper">
+    <div id="content">
+        <h1>This is the calming content between tasks</h1>
+        <p id="instruction"> Please watch the video below</p>
+        <p>
+            <iframe width="650" height="365"
+                    src="https://www.youtube.com/embed/9A0S54yAgEg?controls=0&start=13&autoplay=1"
+                    frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+        </p>
+        <!--Please click here to continue the session.-->
+        <!--<p>-->
+        <!--    <a href="forth_task">LINK &ndash;&gt; </a>-->
+        <!--</p>-->
+    </div>
+</div>
+<script>
+    setTimeout(function () {
+        window.location.href = 'forth_task';
+    }, 5000);
+</script>
 </body>
 </html>

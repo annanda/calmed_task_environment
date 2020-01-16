@@ -1,0 +1,67 @@
+#content {
+    width: 700px;
+    height: 500px;
+    border: 2px solid lightgray;
+    border-radius: 5px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    /*padding-left: 20px;*/
+    margin: auto;
+}
+
+#content_welcome {
+    width: 700px;
+    height: 500px;
+    /*margin-top: -21px;*/
+    /*background-color: red;*/
+    /*border: 2px solid lightyellow;*/
+    /*border-radius: 5px;*/
+    /*position: absolute;*/
+    /*top: 0;*/
+    /*bottom: 0;*/
+    /*left: 0;*/
+    /*right: 0;*/
+    /*padding-left: 20px;*/
+    /*margin: auto;*/
+    background-image: url("images/background_image.png");
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+
+}
+
+#wrapper {
+    width: 800px;
+    height: 600px;
+    /*background-color: yellow;*/
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+
+    margin: auto;
+}
+
+h1 {
+    visibility: hidden;
+    display: inline;
+}
+
+video {
+    display: block;
+    margin: 0 auto;
+}
+p#instruction{
+    text-align: center;
+    width: 700px;
+    font-size: 40px;
+    font-family: sans-serif;
+    color: #4680ca;
+    margin: 0;
+}

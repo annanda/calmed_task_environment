@@ -6,19 +6,20 @@
     {% include 'header.html' %}
     <script>
         setTimeout(function () {
-            window.location.href = 'first_task';
+            // window.location.href = 'first_task';
         }, 5000);
     </script>
 </head>
 
 <body>
-<h1>Welcome to this session.</h1>
-<p>
-    This is the task environment.
-</p>
-Please click here to start the session.
-<p>
-    <a href="first_task">LINK --> </a>
-</p>
+<div id="wrapper">
+    <div id="content">
+        <a href="first_task">
+            <div id="content_welcome">
+                <h1>Welcome to this session.</h1>
+            </div>
+        </a>
+    </div>
+</div>
 </body>
 </html>

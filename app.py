@@ -80,7 +80,7 @@ def store_timestamp():
 
 if __name__ == '__main__':
     # TODO comment the lines below
-    app.app_context().push()
-    db.drop_all()
-    db.create_all()
+    # app.app_context().push()
+    # db.drop_all()
+    # db.create_all()
     app.run(debug=True, host='0.0.0.0', port=90)

@@ -16,7 +16,7 @@ body {
     display: block;
 }
 
-#submit {
+#submit, #previous, #next {
     font-family: sans-serif;
     font-size: 20px;
     background-color: #279;
@@ -28,7 +28,7 @@ body {
     margin-bottom: 20px;
 }
 
-#submit:hover {
+#submit:hover, #previous:hover, #next:hover {
     background-color: #38a;
 }
 

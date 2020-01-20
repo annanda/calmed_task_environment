@@ -8,13 +8,14 @@ window.onload = function () {
 
     const myQuestions = [
         {
-            question: "Who is the strongest?",
-            answers: {
-                a: "Superman",
-                b: "The Terminator",
-                c: "Waluigi, obviously"
-            },
-            correctAnswer: "c"
+            question: "139 + 51?",
+            // answers: {
+            //     a: "220",
+            //     b: "232",
+            //     c: "156",
+            //     d: "190"
+            // },
+            correctAnswer: "190"
         },
         {
             question: "What is the best site ever created?",
@@ -49,17 +50,15 @@ window.onload = function () {
                 const answers = [];
 
                 // and for each available answer...
-                for (letter in currentQuestion.answers) {
+                // for (letter in currentQuestion.answers) {
 
                     // ...add an HTML radio button
                     answers.push(
                         `<label>
-            <input type="radio" name="question${questionNumber}" value="${letter}">
-            ${letter} :
-            ${currentQuestion.answers[letter]}
+            <input type="text" name="question${questionNumber}">
           </label>`
                     );
-                }
+                // }
 
                 // add this question and its answers to the output
                 output.push(
@@ -136,7 +135,18 @@ window.onload = function () {
     showSlide(0);
 
     function showNextSlide() {
-        showSlide(currentSlide + 1);
+        const answerContainers = quizContainer.querySelectorAll('.answers');
+        const answerContainer = answerContainers[currentSlide];
+        const selector = 'input[name=question' + currentSlide + ']';
+        const userAnswer = (answerContainer.querySelector(selector) || {}).value;
+
+        if (myQuestions[currentSlide].correctAnswer === userAnswer) {
+            showSlide(currentSlide + 1);
+            resultsContainer.innerHTML = ""
+        } else {
+            resultsContainer.innerHTML = "Your answer is not correct, please try again";
+            resultsContainer.style.color = 'red';
+        }
     }
 
     function showPreviousSlide() {

@@ -6,7 +6,7 @@ window.onload = function () {
     const previousButton = document.getElementById("previous");
     const nextButton = document.getElementById("next");
 
-    let number_30_sec = 0.2
+    let number_30_sec = 4
     let total_seconds = 30 * number_30_sec;
     let c_minutes = parseInt(total_seconds / 60);
     let c_seconds = parseInt(total_seconds % 60);
@@ -78,6 +78,7 @@ window.onload = function () {
 
         // finally combine our output list into one string of HTML and put it on the page
         quizContainer.innerHTML = output.join('');
+
     }
 
     function showResults() {
@@ -118,10 +119,14 @@ window.onload = function () {
 
     // display quiz right away
     buildQuiz();
-    CheckTime();
+    // CheckTime();
 
     const slides = document.querySelectorAll(".slide");
     let currentSlide = 0;
+    showSlide(0);
+
+    // const slides = document.querySelectorAll(".slide");
+    // let currentSlide = 0;
 
     function showSlide(n) {
         slides[currentSlide].classList.remove('active-slide');
@@ -141,7 +146,7 @@ window.onload = function () {
         }
     }
 
-    showSlide(0);
+    // showSlide(0);
 
     function showNextSlide() {
         // showSlide(currentSlide + 1);

@@ -6,6 +6,24 @@ window.onload = function () {
     const previousButton = document.getElementById("previous");
     const nextButton = document.getElementById("next");
 
+    let number_30_sec = 0.2
+    let total_seconds = 30 * number_30_sec;
+    let c_minutes = parseInt(total_seconds / 60);
+    let c_seconds = parseInt(total_seconds % 60);
+    let timer;
+
+    function CheckTime() {
+        document.getElementById("quiz-time-left").innerHTML = 'Time Left: ' + c_minutes + ' minutes ' + c_seconds + ' seconds ';
+
+        if (total_seconds <= 0) {
+            showResults();
+        } else {
+            total_seconds = total_seconds - 1;
+            c_minutes = parseInt(total_seconds / 60);
+            c_seconds = parseInt(total_seconds % 60);
+            timer = setTimeout(CheckTime, 1000);
+        }
+    }
 
     const myQuestions = [
         {
@@ -40,12 +58,12 @@ window.onload = function () {
                 // and for each available answer...
                 // for (letter in currentQuestion.answers) {
 
-                    // ...add an HTML radio button
-                    answers.push(
-                        `<label>
-            <input type="text" name="question${questionNumber}">
+                // ...add an HTML radio button
+                answers.push(
+                    `<label>
+            <input type="text" name="question${questionNumber}" id="questions">
           </label>`
-                    );
+                );
                 // }
 
                 // add this question and its answers to the output
@@ -68,6 +86,7 @@ window.onload = function () {
 
         // keep track of user's answers
         let numCorrect = 0;
+        // document.getElementById('questions').disabled = true;
 
         // for each question...
         myQuestions.forEach((currentQuestion, questionNumber) => {
@@ -75,13 +94,14 @@ window.onload = function () {
             // find selected answer
             const answerContainer = answerContainers[questionNumber];
             const selector = 'input[name=question' + questionNumber + ']';
-            const userAnswer = (answerContainer.querySelector(selector) || {}).value;
-
             // if answer is correct
+
+            const userAnswer = (answerContainer.querySelector(selector) || {}).value;
+            (answerContainer.querySelector(selector) || {}).disabled = true;
             if (userAnswer === currentQuestion.correctAnswer) {
+
                 // add to the number of correct answers
                 numCorrect++;
-
                 // color the answers green
                 answerContainers[questionNumber].style.color = 'lightgreen';
             }
@@ -98,6 +118,7 @@ window.onload = function () {
 
     // display quiz right away
     buildQuiz();
+    CheckTime();
 
     const slides = document.querySelectorAll(".slide");
     let currentSlide = 0;
@@ -130,8 +151,14 @@ window.onload = function () {
         const userAnswer = (answerContainer.querySelector(selector) || {}).value;
 
         if (myQuestions[currentSlide].correctAnswer === userAnswer) {
-            showSlide(currentSlide + 1);
-            messagesContainer.innerHTML = ""
+            if (currentSlide === slides.length - 1) {
+                // showSlide(currentSlide);
+                messagesContainer.innerHTML = ""
+                showResults();
+            } else {
+                showSlide(currentSlide + 1);
+                messagesContainer.innerHTML = ""
+            }
         } else {
             messagesContainer.innerHTML = "Your answer is not correct, please try again";
             messagesContainer.style.color = 'red';
@@ -147,5 +174,6 @@ window.onload = function () {
     nextButton.addEventListener("click", showNextSlide);
 
     // on submit, show results
-    submitButton.addEventListener('click', showResults);
+    // submitButton.addEventListener('click', showResults);
+    submitButton.addEventListener('click', showNextSlide);
 }

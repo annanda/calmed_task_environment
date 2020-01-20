@@ -1,6 +1,7 @@
 window.onload = function () {
     const quizContainer = document.getElementById('quiz');
     const resultsContainer = document.getElementById('results');
+    const messagesContainer = document.getElementById('messages');
     const submitButton = document.getElementById('submit');
     const previousButton = document.getElementById("previous");
     const nextButton = document.getElementById("next");
@@ -8,34 +9,21 @@ window.onload = function () {
 
     const myQuestions = [
         {
-            question: "139 + 51?",
-            // answers: {
-            //     a: "220",
-            //     b: "232",
-            //     c: "156",
-            //     d: "190"
-            // },
+            question: "139 + 51 = ?",
             correctAnswer: "190"
         },
         {
-            question: "What is the best site ever created?",
-            answers: {
-                a: "SitePoint",
-                b: "Simple Steps Code",
-                c: "Trick question; they're both the best"
-            },
-            correctAnswer: "c"
+            question: "141 + 59 = ?",
+            correctAnswer: "200"
         },
-        {
-            question: "Where is Waldo really?",
-            answers: {
-                a: "Antarctica",
-                b: "Exploring the Pacific Ocean",
-                c: "Sitting in a tree",
-                d: "Minding his own business, so stop asking"
-            },
-            correctAnswer: "d"
-        }
+        // {
+        //     question: "97 + 75 = ?",
+        //     correctAnswer: "172"
+        // },
+        // {
+        //     question: "80 + 93 = ?",
+        //     correctAnswer: "173"
+        // }
     ];
 
     function buildQuiz() {
@@ -86,7 +74,7 @@ window.onload = function () {
 
             // find selected answer
             const answerContainer = answerContainers[questionNumber];
-            const selector = 'input[name=question' + questionNumber + ']:checked';
+            const selector = 'input[name=question' + questionNumber + ']';
             const userAnswer = (answerContainer.querySelector(selector) || {}).value;
 
             // if answer is correct
@@ -135,6 +123,7 @@ window.onload = function () {
     showSlide(0);
 
     function showNextSlide() {
+        // showSlide(currentSlide + 1);
         const answerContainers = quizContainer.querySelectorAll('.answers');
         const answerContainer = answerContainers[currentSlide];
         const selector = 'input[name=question' + currentSlide + ']';
@@ -142,15 +131,16 @@ window.onload = function () {
 
         if (myQuestions[currentSlide].correctAnswer === userAnswer) {
             showSlide(currentSlide + 1);
-            resultsContainer.innerHTML = ""
+            messagesContainer.innerHTML = ""
         } else {
-            resultsContainer.innerHTML = "Your answer is not correct, please try again";
-            resultsContainer.style.color = 'red';
+            messagesContainer.innerHTML = "Your answer is not correct, please try again";
+            messagesContainer.style.color = 'red';
         }
     }
 
     function showPreviousSlide() {
         showSlide(currentSlide - 1);
+        messagesContainer.innerHTML = ""
     }
 
     previousButton.addEventListener("click", showPreviousSlide);

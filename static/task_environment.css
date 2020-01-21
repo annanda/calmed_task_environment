@@ -1,3 +1,9 @@
+body {
+    font-size: 20px;
+    font-family: sans-serif;
+    color: #333;
+}
+
 #content {
     width: 700px;
     height: 500px;
@@ -33,7 +39,7 @@
 
 }
 
-#content_ending{
+#content_ending {
     width: 700px;
     height: 500px;
     background-image: url("images/background_image_end.png");
@@ -58,19 +64,32 @@
 }
 
 h1 {
-    visibility: hidden;
-    display: inline;
+    display: none;
 }
 
 video, iframe {
     display: block;
     margin: 0 auto;
 }
-p#instruction, h1#instruction{
+
+p#instruction, h1#instruction {
+    /*text-align: center;*/
+    /*width: 700px;*/
+    /*font-size: 40px;*/
+    /*font-family: sans-serif;*/
+    /*color: #4680ca;*/
+    /*margin: 0;*/
+    /*display: block;*/
+
+
+    font-weight: 300;
+    margin: 0px;
+    padding: 10px;
+    font-size: 30px;
+    background-color: #444;
+    color: #fff;
+    visibility: visible;
+    display: block;
     text-align: center;
-    width: 700px;
-    font-size: 40px;
-    font-family: sans-serif;
-    color: #4680ca;
-    margin: 0;
+    font-weight: bold;
 }

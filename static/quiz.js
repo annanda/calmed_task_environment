@@ -13,7 +13,7 @@ window.onload = function () {
     let timer;
 
     function CheckTime() {
-        document.getElementById("quiz-time-left").innerHTML = 'Time Left: ' + c_minutes + ' minutes ' + c_seconds + ' seconds ';
+        document.getElementById("quiz-time-left").innerHTML = 'Time Left: <br>' + c_minutes + ' minutes ' + c_seconds + ' seconds ';
 
         if (total_seconds <= 0) {
             showResults();
@@ -119,7 +119,7 @@ window.onload = function () {
 
     // display quiz right away
     buildQuiz();
-    // CheckTime();
+    CheckTime();
 
     const slides = document.querySelectorAll(".slide");
     let currentSlide = 0;

@@ -8,15 +8,19 @@ h1#worksheet {
     font-weight: 300;
     margin: 0px;
     padding: 10px;
-    font-size: 20px;
+    font-size: 30px;
     background-color: #444;
     color: #fff;
     visibility: visible;
     display: block;
+    text-align: center;
+    font-weight: bold;
 }
 
 .question {
     font-weight: 600;
+    FONT-SIZE: xx-large;
+    margin-bottom: 20px;
 }
 
 .answers {
@@ -63,7 +67,7 @@ button {
 .slide {
     position: absolute;
     left: 0px;
-    top: 30px;
+    top: 75px;
     width: 100%;
     z-index: 1;
     opacity: 0;
@@ -78,8 +82,8 @@ button {
 
 .quiz-container {
     position: relative;
-    height: 200px;
-    margin-top: 40px;
+    height: 250px;
+    margin-top: 0px;
     text-align: center;
 }
 
@@ -94,4 +98,17 @@ button {
 
 #quiz-buttons-message {
     text-align: center;
+}
+
+input[type=text] {
+    width: 30%;
+    height: 40px;
+    font-size: x-large;
+}
+
+#quiz-time-left {
+    width: 26%;
+    float: right;
+    color: red;
+    font-weight: bold;
 }

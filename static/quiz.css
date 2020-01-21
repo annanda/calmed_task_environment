@@ -1,0 +1,106 @@
+body {
+    font-size: 20px;
+    font-family: sans-serif;
+    color: #333;
+}
+
+h1#worksheet {
+    font-weight: 300;
+    margin: 0px;
+    padding: 10px;
+    font-size: 30px;
+    background-color: #444;
+    color: #fff;
+    visibility: visible;
+    display: block;
+    text-align: center;
+    font-weight: bold;
+}
+
+.question {
+    font-weight: 600;
+    FONT-SIZE: xx-large;
+    margin-bottom: 20px;
+}
+
+.answers {
+    margin-bottom: 20px;
+}
+
+.answers label {
+    display: block;
+}
+
+
+#submit, #previous, #next {
+    display: none;
+}
+
+button {
+    font-family: sans-serif;
+    font-size: 20px;
+    background-color: #444;
+    color: #fff;
+    border: 0px;
+    border-radius: 3px;
+    padding: 20px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+#submit:hover, #previous:hover, #next:hover {
+    background-color: #38a;
+}
+
+.slide, .slide_wrapper {
+    position: absolute;
+    left: 0px;
+    top: 75px;
+    width: 100%;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.5s;
+    /*border: 2px solid coral;*/
+}
+
+.active-slide {
+    opacity: 1;
+    z-index: 2;
+}
+
+.quiz-container {
+    position: relative;
+    height: 250px;
+    margin-top: 0px;
+    text-align: center;
+}
+
+#quiz {
+    margin-top: 10px;
+    display: block;
+}
+
+#timer {
+    /*margin-bottom: -20px;*/
+}
+
+#quiz-buttons-message {
+    text-align: center;
+}
+
+input[type=text] {
+    width: 30%;
+    height: 40px;
+    font-size: x-large;
+}
+
+input[type=text]:disabled {
+    background: #dddddd;
+}
+
+#quiz-time-left {
+    width: 26%;
+    float: right;
+    color: red;
+    font-weight: bold;
+}

@@ -88,6 +88,11 @@ def end_game():
     return render_template('end_game.html')
 
 
+@app.route('/schedule', methods=['GET'])
+def schedule():
+    return render_template('schedule.html')
+
+
 if __name__ == '__main__':
     # TODO comment the lines below
     # app.app_context().push()

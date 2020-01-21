@@ -2,28 +2,28 @@
 <html lang="en">
 <head>
     {% include 'header.html' %}
-
+    <link rel="stylesheet" type="text/css" href="../static/quiz.css">
 </head>
 <body>
 <div id="wrapper">
     <div id="content">
         <h1>This is the second task</h1>
-        <p id="instruction"> Please watch the video below</p>
-        <p>
-            <iframe width="650" height="365"
-                    src="https://www.youtube.com/embed/H9InaUJm0A8?controls=0&amp;start=78&autoplay=1"
-                    frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen></iframe>
+        <p id="instruction"> Game time</p>
+        <p class="question" >
+            You will play a game next. Enjoy.
+            <!--            <iframe width="650" height="365"-->
+            <!--                    src="https://www.youtube.com/embed/H9InaUJm0A8?controls=0&amp;start=78&autoplay=1"-->
+            <!--                    frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"-->
+            <!--                    allowfullscreen></iframe>-->
+            <br><br>
+            <a href="/game">Play now!</a>
         </p>
-        <!--Please click here to continue the session.-->
-        <!--<p>-->
-        <!--    <a href="calming_content_2">LINK &ndash;&gt; </a>-->
-        <!--</p>-->
     </div>
 </div>
 <script>
     setTimeout(function () {
-        window.location.href = 'calming_content_2';
+        // window.location.href = 'calming_content_2';
+        // window.location.href = 'game';
     }, 5000);
 </script>
 </body>

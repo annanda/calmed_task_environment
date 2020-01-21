@@ -78,6 +78,16 @@ def store_timestamp():
     pass
 
 
+@app.route('/game', methods=['GET'])
+def game():
+    return render_template('game.html')
+
+
+@app.route('/end_game', methods=['GET'])
+def end_game():
+    return render_template('end_game.html')
+
+
 if __name__ == '__main__':
     # TODO comment the lines below
     # app.app_context().push()

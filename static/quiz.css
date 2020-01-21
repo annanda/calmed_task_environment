@@ -21,6 +21,7 @@ h1#worksheet {
     font-weight: 600;
     FONT-SIZE: xx-large;
     margin-bottom: 20px;
+    text-align: center;
 }
 
 .answers {

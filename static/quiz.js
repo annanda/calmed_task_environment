@@ -5,6 +5,7 @@ window.onload = function () {
     const submitButton = document.getElementById('submit');
     const previousButton = document.getElementById("previous");
     const nextButton = document.getElementById("next");
+    const startButton = document.getElementById("start");
 
     let number_30_sec = 4
     let total_seconds = 30 * number_30_sec;
@@ -25,6 +26,7 @@ window.onload = function () {
         }
     }
 
+    // where I put the questions
     const myQuestions = [
         {
             question: "139 + 51 = ?",
@@ -47,6 +49,13 @@ window.onload = function () {
     function buildQuiz() {
         // we'll need a place to store the HTML output
         const output = [];
+
+        // this is to create the initial slide - welcome slide
+        output.push(`
+            <div class="slide_wrapper">
+                <p class="question"> Welcome to this quiz</p>
+            </div>
+        `);
 
         // for each question...
         myQuestions.forEach(
@@ -82,6 +91,8 @@ window.onload = function () {
     }
 
     function showResults() {
+        // to stop the timer
+        clearInterval(timer);
         // gather answer containers from our quiz
         const answerContainers = quizContainer.querySelectorAll('.answers');
 
@@ -114,24 +125,48 @@ window.onload = function () {
         });
 
         // show number of correct answers out of total
-        resultsContainer.innerHTML = numCorrect + ' out of ' + myQuestions.length;
+        resultsContainer.innerHTML = 'You got ' + numCorrect + ' out of ' + myQuestions.length + '. <br> Well done!!!';
     }
 
     // display quiz right away
     buildQuiz();
-    CheckTime();
+    // CheckTime();
+
+    // to show the welcome/ending slides instead of questions
+    function showWrapperSlide(n) {
+        if (currentSlideWrapper == 0) {
+            slides[currentSlide].classList.remove('active-slide');
+            slides_wrapper[n].classList.add('active-slide');
+            currentSlideWrapper = n;
+        }
+    }
+
+    function hideWrapperSlide() {
+        slides_wrapper[currentSlideWrapper].classList.remove('active-slide');
+    }
 
     const slides = document.querySelectorAll(".slide");
-    let currentSlide = 0;
-    showSlide(0);
+    const slides_wrapper = document.querySelectorAll(".slide_wrapper")
 
-    // const slides = document.querySelectorAll(".slide");
-    // let currentSlide = 0;
+    let currentSlide = 0;
+    let currentSlideWrapper = 0;
+    showWrapperSlide(0);
+
+
+    function showInitialSlide() {
+        // to start the timer
+        CheckTime();
+        // to show the first question
+        showSlide(0);
+        // to hide the initial slide
+        hideWrapperSlide();
+    }
 
     function showSlide(n) {
         slides[currentSlide].classList.remove('active-slide');
         slides[n].classList.add('active-slide');
         currentSlide = n;
+        startButton.style.display = 'none';
         if (currentSlide === 0) {
             previousButton.style.display = 'none';
         } else {
@@ -146,8 +181,6 @@ window.onload = function () {
         }
     }
 
-    // showSlide(0);
-
     function showNextSlide() {
         // showSlide(currentSlide + 1);
         const answerContainers = quizContainer.querySelectorAll('.answers');
@@ -155,19 +188,27 @@ window.onload = function () {
         const selector = 'input[name=question' + currentSlide + ']';
         const userAnswer = (answerContainer.querySelector(selector) || {}).value;
 
-        if (myQuestions[currentSlide].correctAnswer === userAnswer) {
-            if (currentSlide === slides.length - 1) {
-                // showSlide(currentSlide);
-                messagesContainer.innerHTML = ""
-                showResults();
-            } else {
-                showSlide(currentSlide + 1);
-                messagesContainer.innerHTML = ""
-            }
-        } else {
-            messagesContainer.innerHTML = "Your answer is not correct, please try again";
+        if (userAnswer === "") {
+            messagesContainer.innerHTML = "Your answer is empty, please write an answer";
             messagesContainer.style.color = 'red';
+
+        } else {
+            if (myQuestions[currentSlide].correctAnswer === userAnswer) {
+                if (currentSlide === slides.length - 1) {
+                    messagesContainer.innerHTML = ""
+                    // show results if it is the last slide. This way I can delete the current message container content.
+                    showResults();
+                } else {
+                    showSlide(currentSlide + 1);
+                    messagesContainer.innerHTML = ""
+                }
+            } else {
+                messagesContainer.innerHTML = "Your answer is not correct, please try again";
+                messagesContainer.style.color = 'red';
+            }
         }
+
+
     }
 
     function showPreviousSlide() {
@@ -178,7 +219,9 @@ window.onload = function () {
     previousButton.addEventListener("click", showPreviousSlide);
     nextButton.addEventListener("click", showNextSlide);
 
-    // on submit, show results
+
     // submitButton.addEventListener('click', showResults);
+    // on submit, still call showNextSlide, there I handle if it is the last slide
     submitButton.addEventListener('click', showNextSlide);
+    startButton.addEventListener('click', showInitialSlide);
 }

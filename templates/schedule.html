@@ -2,33 +2,40 @@
 <html lang="en">
 <head>
     {% include 'header.html' %}
-    <!--    <link rel="stylesheet" type="text/css" href="../static/quiz.css">-->
+    <link rel="stylesheet" type="text/css" href="../static/schedule.css">
+    <link rel="stylesheet" type="text/css" href="../static/quiz.css">
 </head>
 <body>
 <div id="wrapper">
     <div id="content">
         <h1>This is the second task</h1>
         <p id="instruction">Welcome to this session</p>
-        <p class="question">
-            Our schedule for Today is:
-            <list>
-                <ul>1. Watch a fun movie</ul>
-                <ul>2. Play a game</ul>
-                <ul>3. Do a worksheet</ul>
-                <ul>4. Watch another movie</ul>
-                <ul>5. Watch another movie</ul>
-            </list>
-            <br><br>
-            <a href="/first_task">Start now!</a>
-        </p>
+
+        <div id="schedule_content">
+            <p class="question"> Our schedule for Today is: </p>
+            <div class="schedule_img">
+                <img src="static/images/watch_video.png" width="282px" ></img>
+            </div>
+            <div class="schedule_list">
+                <list>
+                    <ul>1. Watch a video</ul>
+                    <ul>2. Play a game</ul>
+                    <ul>3. Do a worksheet</ul>
+                    <ul>4. Watch a video</ul>
+                </list>
+            </div>
+            </div>
+        <div id="start_schedule">
+            <a href="/first_task">Let's START!</a>
+        </div>
+        </div>
     </div>
-</div>
-<script>
-    setTimeout(function () {
-        // window.location.href = 'calming_content_2';
-        // window.location.href = 'game';
-    }, 5000);
-</script>
+    <script>
+        setTimeout(function () {
+            // window.location.href = 'calming_content_2';
+            // window.location.href = 'game';
+        }, 5000);
+    </script>
 
 </body>
 </html>

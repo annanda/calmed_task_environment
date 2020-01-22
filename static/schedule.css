@@ -1,0 +1,31 @@
+.schedule_list {
+    width: 50%;
+    /*display: inline-block;*/
+    float: right;
+    /*height: 70px;*/
+    margin-top: 20px;
+}
+
+.schedule_img {
+    width: 50%;
+    height: 70px;
+    float: left;
+    /*text-align: center;*/
+}
+
+#schedule_content {
+    width: 77%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+#start_schedule {
+    width: 100%;
+    float: right;
+    text-align: right;
+    margin-right: 60px;
+    margin-top: 50px;
+}

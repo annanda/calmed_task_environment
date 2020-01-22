@@ -29,3 +29,7 @@
     margin-right: 60px;
     margin-top: 50px;
 }
+
+.done {
+    text-decoration: line-through;
+}

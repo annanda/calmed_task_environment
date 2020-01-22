@@ -93,6 +93,11 @@ def schedule():
     return render_template('schedule.html')
 
 
+@app.route('/schedule_after_1', methods=['GET'])
+def schedule_after_1():
+    return render_template('schedule_after_1.html')
+
+
 if __name__ == '__main__':
     # TODO comment the lines below
     # app.app_context().push()

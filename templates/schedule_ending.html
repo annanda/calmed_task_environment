@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include 'header.html' %}
+    <link rel="stylesheet" type="text/css" href="../static/schedule.css">
+    <link rel="stylesheet" type="text/css" href="../static/quiz.css">
+</head>
+<body>
+<div id="wrapper">
+    <div id="content">
+        <h1>This is the second task</h1>
+        <p id="instruction">You've finished the first part! Well done!</p>
+
+        <div id="schedule_content">
+            <p class="question"> Our schedule for Today is: </p>
+            <div class="schedule_img">
+                <img src="static/images/watch_video.png" width="282px" />
+            </div>
+            <div class="schedule_list">
+                <list>
+                    <ul class="done">1. Watch a video   <img src="static/images/done_2.png" width="30px" /></ul>
+                    <ul class="done">2. Play a game  <img src="static/images/done_2.png" width="30px" /></ul>
+                    <ul class="done">3. Do a worksheet   <img src="static/images/done_2.png" width="30px" /></ul>
+                    <ul class="done">4. Watch a video    <img src="static/images/done_2.png" width="30px" /></ul>
+                </list>
+            </div>
+            </div>
+        <div id="start_schedule">
+            <a href="/second_task">Let's START!</a>
+        </div>
+        </div>
+    </div>
+    <script>
+        setTimeout(function () {
+            // window.location.href = '/second_task';
+            // window.location.href = 'game';
+        }, 5000);
+    </script>
+
+</body>
+</html>

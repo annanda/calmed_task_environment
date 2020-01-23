@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include 'header.html' %}
+    <link rel="stylesheet" type="text/css" href="../static/schedule.css">
+    <link rel="stylesheet" type="text/css" href="../static/quiz.css">
+</head>
+<body>
+<div id="wrapper">
+    <div id="content">
+        <h1>This is the second task</h1>
+        <p id="instruction">Our schedule for Today is:</p>
+
+        <div id="schedule_content">
+            <p id="question_schedule"> Our schedule for Today is: </p>
+            <div class="schedule_img">
+                <img src="static/images/watch_video.png" width="282px" ></img>
+            </div>
+            <div class="schedule_list">
+                <list>
+                    <ul>1. Watch a video</ul>
+                    <ul>2. Play a game</ul>
+                    <ul>3. Do a worksheet</ul>
+                    <ul>4. Watch a video</ul>
+                </list>
+            </div>
+            </div>
+        <div id="start_schedule">
+            <a href="/first_task">Let's START!</a>
+        </div>
+        </div>
+    </div>
+    <script>
+        setTimeout(function () {
+            window.location.href = 'first_task';
+        }, 10000);
+    </script>
+
+</body>
+</html>

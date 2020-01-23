@@ -88,6 +88,31 @@ def end_game():
     return render_template('end_game.html')
 
 
+@app.route('/schedule', methods=['GET'])
+def schedule():
+    return render_template('schedule.html')
+
+
+@app.route('/schedule_after_1', methods=['GET'])
+def schedule_after_1():
+    return render_template('schedule_after_1.html')
+
+
+@app.route('/schedule_after_2', methods=['GET'])
+def schedule_after_2():
+    return render_template('schedule_after_2.html')
+
+
+@app.route('/schedule_after_3', methods=['GET'])
+def schedule_after_3():
+    return render_template('schedule_after_3.html')
+
+
+@app.route('/schedule_ending', methods=['GET'])
+def schedule_ending():
+    return render_template('schedule_ending.html')
+
+
 if __name__ == '__main__':
     # TODO comment the lines below
     # app.app_context().push()

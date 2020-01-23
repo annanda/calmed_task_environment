@@ -9,10 +9,11 @@
 <div id="wrapper">
     <div id="content">
         <h1>This is the second task</h1>
-        <p id="instruction">Game Time is Over Now. You've finished the second part! Well done!</p>
+<!--        <p id="instruction">Game Time is Over Now. You've finished the second part! Well done!</p>-->
+        <p id="instruction">You've finished the second part! Well done!</p>
 
         <div id="schedule_content">
-            <p class="question"> Our schedule for Today is: </p>
+            <p id="question_schedule"> Our schedule for Today is: </p>
             <div class="schedule_img">
                 <img src="static/images/watch_video.png" width="282px" />
             </div>
@@ -26,13 +27,13 @@
             </div>
             </div>
         <div id="start_schedule">
-            <a href="/calming_content_2">Let's CONTINUE!</a>
+            <a href="/third_task">Let's CONTINUE!</a>
         </div>
         </div>
     </div>
     <script>
         setTimeout(function () {
-            window.location.href = '/calming_content_2';
+            window.location.href = '/third_task';
             // window.location.href = 'game';
         }, 10000);
     </script>

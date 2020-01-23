@@ -33,3 +33,6 @@
 .done {
     text-decoration: line-through;
 }
+#question_schedule{
+    visibility: hidden;
+}

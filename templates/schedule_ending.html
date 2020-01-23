@@ -9,10 +9,10 @@
 <div id="wrapper">
     <div id="content">
         <h1>This is the second task</h1>
-        <p id="instruction">You've finished the first part! Well done!</p>
+        <p id="instruction">You've finished all! Well done!</p>
 
         <div id="schedule_content">
-            <p class="question"> Our schedule for Today is: </p>
+            <p id="question_schedule"> Our schedule for Today is: </p>
             <div class="schedule_img">
                 <img src="static/images/watch_video.png" width="282px" />
             </div>
@@ -26,15 +26,15 @@
             </div>
             </div>
         <div id="start_schedule">
-            <a href="/second_task">Let's START!</a>
+            <a href="/ending">Go to the end!</a>
         </div>
         </div>
     </div>
     <script>
         setTimeout(function () {
-            // window.location.href = '/second_task';
+            window.location.href = '/ending';
             // window.location.href = 'game';
-        }, 5000);
+        }, 10000);
     </script>
 
 </body>

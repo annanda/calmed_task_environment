@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, json
 from models import db, TaskTime, MoodTime
 from datetime import datetime
-from conf import TIME_ON_PAGE_BASIC
+from conf import TIME_ON_PAGE_TASK
 
 app = Flask(__name__, template_folder="./templates", static_folder='static')
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///saved-times.db'
@@ -27,8 +27,32 @@ def adding_db_task_timestamp(task, timestamp):
 def first_task():
     timestamp = datetime.now()
     adding_db_task_timestamp('first_task', timestamp)
-    time_on_page = json.dumps(TIME_ON_PAGE_BASIC)
+    time_on_page = json.dumps(TIME_ON_PAGE_TASK)
     return render_template('first_task.html', time_on_page=time_on_page)
+
+
+@app.route('/second_task', methods=['GET'])
+def second_task():
+    timestamp = datetime.now()
+    adding_db_task_timestamp('second_task', timestamp)
+    time_on_page = json.dumps(TIME_ON_PAGE_TASK)
+    return render_template('second_task.html', time_on_page=time_on_page)
+
+
+@app.route('/third_task', methods=['GET'])
+def third_task():
+    timestamp = datetime.now()
+    adding_db_task_timestamp('third_task', timestamp)
+    time_on_page = json.dumps(TIME_ON_PAGE_TASK)
+    return render_template('third_task.html', time_on_page=time_on_page)
+
+
+@app.route('/forth_task', methods=['GET'])
+def forth_task():
+    timestamp = datetime.now()
+    adding_db_task_timestamp('forth_task', timestamp)
+    time_on_page = json.dumps(TIME_ON_PAGE_TASK)
+    return render_template('forth_task.html', time_on_page=time_on_page)
 
 
 @app.route('/calming_content', methods=['GET'])
@@ -51,23 +75,6 @@ def calming_content_3():
 @app.route('/calming_content_4', methods=['GET'])
 def calming_content_4():
     return render_template('calming_content_4.html')
-
-
-@app.route('/second_task', methods=['GET'])
-def second_task():
-    return render_template('second_task.html')
-
-
-@app.route('/third_task', methods=['GET'])
-def third_task():
-    # return "this is the third task"
-    return render_template('third_task.html')
-
-
-@app.route('/forth_task', methods=['GET'])
-def forth_task():
-    # return "this is the forth task"
-    return render_template('forth_task.html')
 
 
 @app.route('/ending', methods=['GET'])

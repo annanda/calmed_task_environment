@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, json
 from models import db, TaskTime, MoodTime
 from datetime import datetime
-from conf import TIME_ON_PAGE_TASK
+from conf import TIME_ON_PAGE_TASK, TIME_ON_PAGE_CALMING, TIME_ON_PAGE_TO_READ
 
 app = Flask(__name__, template_folder="./templates", static_folder='static')
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///saved-times.db'
@@ -59,22 +59,26 @@ def forth_task():
 def calming_content():
     timestamp = datetime.now()
     adding_db_task_timestamp('calming_content', timestamp)
-    return render_template('calming_content.html')
+    time_on_page = json.dumps(TIME_ON_PAGE_CALMING)
+    return render_template('calming_content.html', time_on_page=time_on_page)
 
 
 @app.route('/calming_content_2', methods=['GET'])
 def calming_content_2():
-    return render_template('calming_content_2.html')
+    time_on_page = json.dumps(TIME_ON_PAGE_CALMING)
+    return render_template('calming_content_2.html', time_on_page=time_on_page)
 
 
 @app.route('/calming_content_3', methods=['GET'])
 def calming_content_3():
-    return render_template('calming_content_3.html')
+    time_on_page = json.dumps(TIME_ON_PAGE_CALMING)
+    return render_template('calming_content_3.html', time_on_page=time_on_page)
 
 
 @app.route('/calming_content_4', methods=['GET'])
 def calming_content_4():
-    return render_template('calming_content_4.html')
+    time_on_page = json.dumps(TIME_ON_PAGE_CALMING)
+    return render_template('calming_content_4.html', time_on_page=time_on_page)
 
 
 @app.route('/ending', methods=['GET'])

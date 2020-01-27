@@ -22,9 +22,11 @@
     </div>
 </div>
 <script>
+    time_to_move = JSON.parse({{ time_on_page | tojson}});
     setTimeout(function () {
         window.location.href = 'schedule_after_3';
-    }, 5000);
+    }, time_to_move);
 </script>
+
 </body>
 </html>

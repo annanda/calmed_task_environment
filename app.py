@@ -65,24 +65,32 @@ def calming_content():
 
 @app.route('/calming_content_2', methods=['GET'])
 def calming_content_2():
+    timestamp = datetime.now()
+    adding_db_task_timestamp('calming_content', timestamp)
     time_on_page = json.dumps(TIME_ON_PAGE_CALMING)
     return render_template('calming_content_2.html', time_on_page=time_on_page)
 
 
 @app.route('/calming_content_3', methods=['GET'])
 def calming_content_3():
+    timestamp = datetime.now()
+    adding_db_task_timestamp('calming_content', timestamp)
     time_on_page = json.dumps(TIME_ON_PAGE_CALMING)
     return render_template('calming_content_3.html', time_on_page=time_on_page)
 
 
 @app.route('/calming_content_4', methods=['GET'])
 def calming_content_4():
+    timestamp = datetime.now()
+    adding_db_task_timestamp('calming_content', timestamp)
     time_on_page = json.dumps(TIME_ON_PAGE_CALMING)
     return render_template('calming_content_4.html', time_on_page=time_on_page)
 
 
 @app.route('/ending', methods=['GET'])
 def ending():
+    timestamp = datetime.now()
+    adding_db_task_timestamp('ending_page', timestamp)
     return render_template('ending.html')
 
 
@@ -134,21 +142,25 @@ def mood():
     return render_template('mood.html', time_on_page=time_on_page)
 
 
-@app.route('/store_mood', methods=['GET'])
+@app.route('/store_mood', methods=['POST'])
 def store_mood():
-    # req_data = request.get_json()
-    # mood = req_data['mood']
-    # task = req_data['task']
-    # timestamp = datetime.now()
-    # test first to store in DB with given values.
-    mood = 'happy'
-    task = 'first_task'
+    # print(request.is_json)
+    req_data = request.get_json()
+    # print(req_data)
+    mood = req_data['mood']
+    # print(mood)
+    task = req_data['task']
     timestamp = datetime.now()
+    # test first to store in DB with given values.
+    # mood = 'happy'
+    # task = 'first_task'
+    # timestamp = datetime.now()
 
     db_entry = MoodTime(mood=mood, task=task, timestamp=timestamp)
     db.session.add(db_entry)
     db.session.commit()
     return 'mood saved on DB'
+    # return 'testing POST'
 
 
 if __name__ == '__main__':

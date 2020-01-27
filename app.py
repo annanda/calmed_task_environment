@@ -1,6 +1,7 @@
-from flask import Flask, render_template
-from models import db, TaskTime
+from flask import Flask, render_template, request, json
+from models import db, TaskTime, MoodTime
 from datetime import datetime
+from conf import TIME_ON_PAGE_BASIC
 
 app = Flask(__name__, template_folder="./templates", static_folder='static')
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///saved-times.db'
@@ -12,11 +13,11 @@ db.init_app(app)
 def index_page():
     info = {}
     timestamp = datetime.now()
-    adding_db('index_page', timestamp)
+    adding_db_task_timestamp('index_page', timestamp)
     return render_template('index.html', **info)
 
 
-def adding_db(task, timestamp):
+def adding_db_task_timestamp(task, timestamp):
     db_new_entry = TaskTime(task=task, timestamp=timestamp)
     db.session.add(db_new_entry)
     db.session.commit()
@@ -25,14 +26,15 @@ def adding_db(task, timestamp):
 @app.route('/first_task', methods=['GET'])
 def first_task():
     timestamp = datetime.now()
-    adding_db('first_task', timestamp)
-    return render_template('first_task.html')
+    adding_db_task_timestamp('first_task', timestamp)
+    time_on_page = json.dumps(TIME_ON_PAGE_BASIC)
+    return render_template('first_task.html', time_on_page=time_on_page)
 
 
 @app.route('/calming_content', methods=['GET'])
 def calming_content():
     timestamp = datetime.now()
-    adding_db('calming_content', timestamp)
+    adding_db_task_timestamp('calming_content', timestamp)
     return render_template('calming_content.html')
 
 
@@ -113,9 +115,31 @@ def schedule_ending():
     return render_template('schedule_ending.html')
 
 
+@app.route('/mood', methods=['GET'])
+def mood():
+    return render_template('mood.html')
+
+
+@app.route('/store_mood', methods=['GET'])
+def store_mood():
+    # req_data = request.get_json()
+    # mood = req_data['mood']
+    # task = req_data['task']
+    # timestamp = datetime.now()
+    # test first to store in DB with given values.
+    mood = 'happy'
+    task = 'first_task'
+    timestamp = datetime.now()
+
+    db_entry = MoodTime(mood=mood, task=task, timestamp=timestamp)
+    db.session.add(db_entry)
+    db.session.commit()
+    return 'mood saved on DB'
+
+
 if __name__ == '__main__':
     # TODO comment the lines below
-    # app.app_context().push()
-    # db.drop_all()
-    # db.create_all()
+    app.app_context().push()
+    db.drop_all()
+    db.create_all()
     app.run(debug=True, host='0.0.0.0', port=90)

@@ -13,10 +13,11 @@
            scale="tofit">
 </object>
 <script>
+    time_to_move = JSON.parse({{ time_on_page | tojson}});
     setTimeout(function () {
         window.location.href = 'calming_content_2';
         // window.location.href = 'schedule_after_2';
-    }, 10000);
+    }, time_to_move);
 </script>
 </body>
 </html>

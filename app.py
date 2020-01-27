@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, json
 from models import db, TaskTime, MoodTime
 from datetime import datetime
-from conf import TIME_ON_PAGE_TASK, TIME_ON_PAGE_CALMING, TIME_ON_PAGE_TO_READ
+from conf import TIME_ON_PAGE_TASK, TIME_ON_PAGE_CALMING, TIME_ON_PAGE_TO_READ, TIME_ON_PAGE_MOOD
 
 app = Flask(__name__, template_folder="./templates", static_folder='static')
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///saved-times.db'
@@ -86,49 +86,52 @@ def ending():
     return render_template('ending.html')
 
 
-@app.route('/store_timestamp', methods=['POST'])
-def store_timestamp():
-    pass
-
-
 @app.route('/game', methods=['GET'])
 def game():
-    return render_template('game.html')
+    time_on_page = json.dumps(TIME_ON_PAGE_TASK)
+    return render_template('game.html', time_on_page=time_on_page)
 
 
 @app.route('/end_game', methods=['GET'])
 def end_game():
-    return render_template('end_game.html')
+    time_on_page = json.dumps(TIME_ON_PAGE_TO_READ)
+    return render_template('end_game.html', time_on_page=time_on_page)
 
 
 @app.route('/schedule', methods=['GET'])
 def schedule():
-    return render_template('schedule.html')
+    time_on_page = json.dumps(TIME_ON_PAGE_TO_READ)
+    return render_template('schedule.html', time_on_page=time_on_page)
 
 
 @app.route('/schedule_after_1', methods=['GET'])
 def schedule_after_1():
-    return render_template('schedule_after_1.html')
+    time_on_page = json.dumps(TIME_ON_PAGE_TO_READ)
+    return render_template('schedule_after_1.html', time_on_page=time_on_page)
 
 
 @app.route('/schedule_after_2', methods=['GET'])
 def schedule_after_2():
-    return render_template('schedule_after_2.html')
+    time_on_page = json.dumps(TIME_ON_PAGE_TO_READ)
+    return render_template('schedule_after_2.html', time_on_page=time_on_page)
 
 
 @app.route('/schedule_after_3', methods=['GET'])
 def schedule_after_3():
-    return render_template('schedule_after_3.html')
+    time_on_page = json.dumps(TIME_ON_PAGE_TO_READ)
+    return render_template('schedule_after_3.html', time_on_page=time_on_page)
 
 
 @app.route('/schedule_ending', methods=['GET'])
 def schedule_ending():
-    return render_template('schedule_ending.html')
+    time_on_page = json.dumps(TIME_ON_PAGE_TO_READ)
+    return render_template('schedule_ending.html', time_on_page=time_on_page)
 
 
 @app.route('/mood', methods=['GET'])
 def mood():
-    return render_template('mood.html')
+    time_on_page = json.dumps(TIME_ON_PAGE_MOOD)
+    return render_template('mood.html', time_on_page=time_on_page)
 
 
 @app.route('/store_mood', methods=['GET'])

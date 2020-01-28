@@ -12,10 +12,10 @@
     <div id="content">
         <h1>This is the second task</h1>
         <p id="instruction">How are you feeling now?</p>
-        <div>
-            <button id="happy_mood">Good</button>
-            <a href=""> Neutral</a>
-            <a href="">Bad </a>
+        <div id="mood_buttons">
+            <button id="happy_mood">Happy</button>
+            <button id="neutral_mood"> Neutral</button>
+            <button id="unhappy_mood">Unhappy</button>
 
         </div>
         <div id="answer_mood"></div>
@@ -25,12 +25,5 @@
         </div>
     </div>
 </div>
-<script>
-    time_to_move = JSON.parse({{ time_on_page | tojson}});
-    setTimeout(function () {
-        // window.location.href = 'first_task';
-    }, time_to_move);
-</script>
-
 </body>
 </html>

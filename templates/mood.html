@@ -4,6 +4,8 @@
     {% include 'header.html' %}
     <link rel="stylesheet" type="text/css" href="../static/schedule.css">
     <link rel="stylesheet" type="text/css" href="../static/quiz.css">
+    <script type="text/javascript" src="../static/mood.js"></script>
+
 </head>
 <body>
 <div id="wrapper">
@@ -11,11 +13,12 @@
         <h1>This is the second task</h1>
         <p id="instruction">How are you feeling now?</p>
         <div>
-            <a href="">Good</a>
+            <button id="happy_mood">Good</button>
             <a href=""> Neutral</a>
             <a href="">Bad </a>
 
         </div>
+        <div id="answer_mood"></div>
 
         <div id="start_schedule">
             <a href="/calming_content">Let's START!</a>

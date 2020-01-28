@@ -1,0 +1,39 @@
+#content{
+    background-color: #fbfbfb;
+}
+button{
+    width: 174px;
+    height: 174px;
+    padding: 0px;
+}
+button#happy_mood{
+    background: url("images/happy.png") no-repeat  0 0 transparent;
+    background-size: contain;
+}
+button#happy_mood:hover{
+    background: url("images/happy_onhover.png") no-repeat  0 0 transparent;
+    background-size: contain;
+}
+
+button#unhappy_mood{
+    background: url("images/unhappy.png") no-repeat  0 0 transparent;
+    background-size: contain;
+}
+button#unhappy_mood:hover{
+    background: url("images/unhappy_onhover.png") no-repeat  0 0 transparent;
+    background-size: contain;
+}
+
+button#neutral_mood{
+    background: url("images/neutral.png") no-repeat  0 0 transparent;
+    background-size: contain;
+}
+
+button#neutral_mood:hover{
+    background: url("images/neutral_onhover.png") no-repeat  0 0 transparent;
+    background-size: contain;
+}
+#mood_buttons{
+    text-align: center;
+    margin-top: 130px;
+}

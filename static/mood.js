@@ -10,6 +10,7 @@ function make_request(text, task, method = "post") {
         processData: false,
         success: function (msg) {
             document.getElementById("answer_mood").innerHTML = 'Thanks!'
+            document.getElementById("mood_buttons").innerHTML = 'Thanks!'
 
         }
         // async: false

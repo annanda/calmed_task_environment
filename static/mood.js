@@ -9,8 +9,8 @@ function make_request(text, task, method = "post") {
         contentType: 'application/json',
         processData: false,
         success: function (msg) {
-            document.getElementById("answer_mood").innerHTML = 'Thanks!'
-            document.getElementById("mood_buttons").innerHTML = 'Thanks!'
+            document.getElementById("answer_mood").innerHTML = 'Thanks!';
+            document.getElementById("mood_buttons").style.display = 'None'
 
         }
         // async: false
@@ -59,5 +59,5 @@ window.onload = function () {
 
 let time_to_move = get_url_vars()["time_next"];
 setTimeout(function () {
-    // window.location.href = next_page;
+    window.location.href = next_page;
 }, time_to_move);

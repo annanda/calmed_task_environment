@@ -21,10 +21,11 @@
     </div>
 </div>
 <script>
+    time_to_move = JSON.parse({{ time_on_page | tojson}});
     setTimeout(function () {
         // window.location.href = 'calming_content_2';
-        // window.location.href = 'game';
-    }, 5000);
+        window.location.href = 'game';
+    }, time_to_move);
 </script>
 </body>
 </html>

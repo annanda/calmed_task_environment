@@ -82,3 +82,26 @@ p#instruction, h1#instruction {
     text-align: center;
     font-weight: bold;
 }
+.hidden_button{
+    visibility: hidden;
+    display: inline-block;
+    background-color: #3388aa;
+    color: white;
+    width: 210px;
+    height: 80px;
+}
+.hidden_button:hover{
+    visibility: visible;
+    background-color: #fbfbfb;
+}
+.hidden_button_link{
+    text-decoration: none;
+    font-size: xx-large;
+    width: 210px;
+    height: 80px;
+    display: inline-block;
+}
+.hidden_button_link:hover{
+    visibility: visible;
+    background-color: #fbfbfb;
+}

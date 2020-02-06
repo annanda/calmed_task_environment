@@ -9,7 +9,9 @@ function make_request(text, task, method = "post") {
         contentType: 'application/json',
         processData: false,
         success: function (msg) {
-            document.getElementById("answer_mood").innerHTML = 'Thanks!';
+            // document.getElementById("answer_mood").style.display = 'block';
+            let text =  'Thank you! <br>';
+            document.getElementById("answer_mood").innerHTML= text + '<a id="continue_mood_link" href="/'+ next_page + '" > Let\'s CONTINUE!';
             document.getElementById("mood_buttons").style.display = 'None'
 
         }

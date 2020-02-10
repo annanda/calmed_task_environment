@@ -14,7 +14,7 @@
 <div id="wrapper">
     <div id="content">
         <h1>This is the second task</h1>
-        <p id="instruction">Our schedule for Today is:</p>
+        <p id="instruction">Game time! Enjoy</p>
         <div id="pacman"></div>
 
         </div>
@@ -22,7 +22,7 @@
     <script>
         time_to_move = JSON.parse({{ time_on_page | tojson}});
         setTimeout(function () {
-            window.location.href = 'first_task';
+            window.location.href = 'mood?task=second_task&time_next=' + time_to_move;
         }, time_to_move);
 
         var el = document.getElementById("pacman");

@@ -11,8 +11,10 @@
 }
 
 #pacman {
-    height: 450px;
-    width: 342px;
+    /*height: 450px;*/
+    /*width: 342px;*/
+    height: 600px;
+    width: 456px;
     margin: 5px auto;
 }
 
@@ -28,7 +30,7 @@ h1 {
 }
 
 body {
-    width: 342px;
+    /*width: 342px;*/
     margin: 0px auto;
     font-family: sans-serif;
 }

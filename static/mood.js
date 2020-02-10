@@ -57,6 +57,7 @@ window.onload = function () {
         mood = 'unhappy_mood';
         make_request(mood, task);
     }
+    document.getElementById("where_hidden_button").innerHTML = "<a class=\"hidden_button_link\" href=" + next_page + "><div class=\"hidden_button\">go on</div></a>"
 }
 
 let time_to_move = get_url_vars()["time_next"];

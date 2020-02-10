@@ -6,19 +6,20 @@
     <link rel="stylesheet" type="text/css" href="../static/quiz.css">
     <link rel="stylesheet" type="text/css" href="../static/game.css">
     <script src="../static/pacman.js"></script>
-<script src="../static/modernizr-1.5.min.js"></script>
+    <script src="../static/modernizr-1.5.min.js"></script>
 
 </head>
 
 <body>
-<div id="wrapper">
-    <div id="content">
-        <h1>This is the second task</h1>
-        <p id="instruction">Game time! Enjoy</p>
+<a class="hidden_button_link" href={{ "mood?task=second_task&time_next=" + time_on_page}}><div class="hidden_button">go on</div></a>
+<!--<div id="wrapper">-->
+<!--    <div id="content">-->
+<!--        <h1>This is the second task</h1>-->
+<!--        <p id="instruction">Game time! Enjoy</p>-->
         <div id="pacman"></div>
 
-        </div>
-    </div>
+<!--        </div>-->
+<!--    </div>-->
     <script>
         time_to_move = JSON.parse({{ time_on_page | tojson}});
         setTimeout(function () {

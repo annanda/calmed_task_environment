@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, json
 from models import db, TaskTime, MoodTime
 from datetime import datetime
-from conf import TIME_ON_PAGE_TASK, TIME_ON_PAGE_CALMING, TIME_ON_PAGE_TO_READ, TIME_ON_PAGE_MOOD
+from conf import TIME_ON_PAGE_TASK, TIME_ON_PAGE_CALMING, TIME_ON_PAGE_TO_READ, TIME_ON_PAGE_MOOD, INDEX_BG_IMAGE
 
 app = Flask(__name__, template_folder="./templates", static_folder='static')
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///saved-times.db'
@@ -14,7 +14,7 @@ def index_page():
     info = {}
     timestamp = datetime.now()
     adding_db_task_timestamp('index_page', timestamp)
-    return render_template('index.html', **info)
+    return render_template('index.html', **info, image_bg=INDEX_BG_IMAGE)
 
 
 def adding_db_task_timestamp(task, timestamp):

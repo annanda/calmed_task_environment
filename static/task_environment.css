@@ -18,15 +18,15 @@ body {
     margin: auto;
 }
 
-#content_welcome {
-    width: 700px;
-    height: 500px;
-    background-image: url("images/background_image.png");
-    background-position: center; /* Center the image */
-    background-repeat: no-repeat; /* Do not repeat the image */
-    background-size: cover; /* Resize the background image to cover the entire container */
+/*#content_welcome {*/
+/*    width: 700px;*/
+/*    height: 500px;*/
+/*    background-image: url("images/background_image.png");*/
+/*    background-position: center; !* Center the image *!*/
+/*    background-repeat: no-repeat; !* Do not repeat the image *!*/
+/*    background-size: cover; !* Resize the background image to cover the entire container *!*/
 
-}
+/*}*/
 
 #content_ending {
     width: 700px;

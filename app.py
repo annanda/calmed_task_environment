@@ -1,7 +1,8 @@
 from flask import Flask, render_template, request, json
 from models import db, TaskTime, MoodTime
 from datetime import datetime
-from conf import TIME_ON_PAGE_TASK, TIME_ON_PAGE_CALMING, TIME_ON_PAGE_TO_READ, TIME_ON_PAGE_MOOD, INDEX_BG_IMAGE
+from conf import TIME_ON_PAGE_TASK, TIME_ON_PAGE_CALMING, TIME_ON_PAGE_TO_READ, TIME_ON_PAGE_MOOD, INDEX_BG_IMAGE, \
+    CALMING_VIDEO_1, CALMING_VIDEO_2, CALMING_VIDEO_3, CALMING_VIDEO_4, GREEN_ZONE_VIDEO, BLUE_ZONE_VIDEO
 
 app = Flask(__name__, template_folder="./templates", static_folder='static')
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///saved-times.db'
@@ -28,7 +29,7 @@ def first_task():
     timestamp = datetime.now()
     adding_db_task_timestamp('first_task', timestamp)
     time_on_page = json.dumps(TIME_ON_PAGE_TASK)
-    return render_template('first_task.html', time_on_page=time_on_page)
+    return render_template('first_task.html', time_on_page=time_on_page, green_video=GREEN_ZONE_VIDEO)
 
 
 @app.route('/second_task', methods=['GET'])
@@ -52,7 +53,7 @@ def forth_task():
     timestamp = datetime.now()
     adding_db_task_timestamp('forth_task', timestamp)
     time_on_page = json.dumps(TIME_ON_PAGE_TASK)
-    return render_template('forth_task.html', time_on_page=time_on_page)
+    return render_template('forth_task.html', time_on_page=time_on_page, blue_video=BLUE_ZONE_VIDEO)
 
 
 @app.route('/calming_content', methods=['GET'])
@@ -60,7 +61,7 @@ def calming_content():
     timestamp = datetime.now()
     adding_db_task_timestamp('calming_content', timestamp)
     time_on_page = json.dumps(TIME_ON_PAGE_CALMING)
-    return render_template('calming_content.html', time_on_page=time_on_page)
+    return render_template('calming_content.html', time_on_page=time_on_page, calming_video=CALMING_VIDEO_1)
 
 
 @app.route('/calming_content_2', methods=['GET'])
@@ -68,7 +69,7 @@ def calming_content_2():
     timestamp = datetime.now()
     adding_db_task_timestamp('calming_content', timestamp)
     time_on_page = json.dumps(TIME_ON_PAGE_CALMING)
-    return render_template('calming_content_2.html', time_on_page=time_on_page)
+    return render_template('calming_content_2.html', time_on_page=time_on_page, calming_video=CALMING_VIDEO_2)
 
 
 @app.route('/calming_content_3', methods=['GET'])
@@ -76,7 +77,7 @@ def calming_content_3():
     timestamp = datetime.now()
     adding_db_task_timestamp('calming_content', timestamp)
     time_on_page = json.dumps(TIME_ON_PAGE_CALMING)
-    return render_template('calming_content_3.html', time_on_page=time_on_page)
+    return render_template('calming_content_3.html', time_on_page=time_on_page, calming_video=CALMING_VIDEO_3)
 
 
 @app.route('/calming_content_4', methods=['GET'])
@@ -84,7 +85,7 @@ def calming_content_4():
     timestamp = datetime.now()
     adding_db_task_timestamp('calming_content', timestamp)
     time_on_page = json.dumps(TIME_ON_PAGE_CALMING)
-    return render_template('calming_content_4.html', time_on_page=time_on_page)
+    return render_template('calming_content_4.html', time_on_page=time_on_page, calming_video=CALMING_VIDEO_4)
 
 
 @app.route('/ending', methods=['GET'])

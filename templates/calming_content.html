@@ -7,7 +7,9 @@
 
 
 <body>
-<a class="hidden_button_link" href="schedule_after_1"><div class="hidden_button">go on</div></a>
+<a class="hidden_button_link" href="schedule_after_1">
+    <div class="hidden_button">go on</div>
+</a>
 
 <div id="wrapper">
     <div id="content">
@@ -15,8 +17,9 @@
         <p id="instruction"> Please watch the video below</p>
         <p>
             <iframe width="650" height="365"
-                    src="https://www.youtube.com/embed/9A0S54yAgEg?controls=0&start=13&autoplay=1"
-                    frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    src={{ calming_video
+                    }} frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen></iframe>
         </p>
     </div>
@@ -26,7 +29,7 @@
 <!--    <a href="second_task">LINK &ndash;&gt; </a>-->
 <!--</p>-->
 <script>
-    time_to_move = JSON.parse({{ time_on_page | tojson}});
+    time_to_move = JSON.parse({{time_on_page | tojson }});
     setTimeout(function () {
         window.location.href = 'schedule_after_1';
     }, time_to_move);

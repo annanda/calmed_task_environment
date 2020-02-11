@@ -29,8 +29,8 @@ window.onload = function () {
     // where I put the questions
     const myQuestions = [
         {
-            question: "139 + 51 = ?",
-            correctAnswer: "190"
+            question: "If 21 x 25 = 525, then <br> <br> 525 ÷ _____ = 25",
+            correctAnswer: "21"
         },
         {
             question: "141 + 59 = ?",

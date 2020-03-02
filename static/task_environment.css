@@ -107,6 +107,7 @@ p#instruction, h1#instruction {
 }
 #calm_video{
     display: none;
+    margin-top: 20px;
 }
 
 .calm_links_div {

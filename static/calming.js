@@ -2,16 +2,30 @@ window.onload = function () {
     document.getElementById("breathing_click").onclick = function () {
         document.getElementById("calm_links").style.display = "none";
         document.getElementById("calm_video").style.display = "block";
+        document.getElementById('calm_video_play').src = 'static/videos/breathing.mp4';
+        document.getElementById('calm_video_play').currentTime = 13;
         document.getElementById("calm_video_play").play()
 
     }
-    document.getElementById("neutral_mood").onclick = function () {
-        mood = 'neutral_mood';
-        make_request(mood, task);
+    document.getElementById("listening_click").onclick = function () {
+        document.getElementById("calm_links").style.display = "none";
+        document.getElementById("calm_video").style.display = "block";
+        document.getElementById('calm_video_play').src = 'static/videos/listening_game.mp4';
+        document.getElementById('calm_video_play').currentTime = 13;
+        document.getElementById("calm_video_play").play()
     }
-    document.getElementById("unhappy_mood").onclick = function () {
-        mood = 'unhappy_mood';
-        make_request(mood, task);
+    document.getElementById("creatures_sea_click").onclick = function () {
+        document.getElementById("calm_links").style.display = "none";
+        document.getElementById("calm_video").style.display = "block";
+        document.getElementById('calm_video_play').src = 'static/videos/sea_creatures.mp4';
+        document.getElementById('calm_video_play').currentTime = 14;
+        document.getElementById("calm_video_play").play()
     }
-    document.getElementById("where_hidden_button").innerHTML = "<a class=\"hidden_button_link\" href=" + next_page + "><div class=\"hidden_button\">go on</div></a>"
+    document.getElementById("peace_out_click").onclick = function () {
+        document.getElementById("calm_links").style.display = "none";
+        document.getElementById("calm_video").style.display = "block";
+        document.getElementById('calm_video_play').src = 'static/videos/peace_out.mp4';
+        document.getElementById('calm_video_play').currentTime = 18;
+        document.getElementById("calm_video_play").play()
+    }
 }

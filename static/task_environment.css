@@ -113,7 +113,6 @@ p#instruction, h1#instruction {
 .calm_links_div {
     width: 260px;
     height: 180px;
-    background-color: #3388aa;
     float: left;
     margin-right: 20px;
     text-align: center;
@@ -126,7 +125,7 @@ p#instruction, h1#instruction {
     /*background-color: #dddddd;*/
 }
 #breathing{
-    background-image: url("images/breathing.png");
+    background-image: url("images/breathing_small.png");
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */
     background-size: cover;
@@ -138,7 +137,7 @@ p#instruction, h1#instruction {
     background-size: cover;
 }
 #creatures_sea {
-    background-image: url("images/sea_creatures.png");
+    background-image: url("images/sea_creatures_small.png");
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */
     background-size: cover;

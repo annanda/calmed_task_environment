@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     {% include 'header.html' %}
-
+    <script src="../static/calming.js"></script>
 </head>
 
 
@@ -14,14 +14,19 @@
 <div id="wrapper">
     <div id="content">
         <h1>This is the calming content between tasks</h1>
-        <p id="instruction"> Please watch the video below</p>
-        <p>
-            <iframe width="650" height="365"
-                    src={{ calming_video
-                    }} frameborder="0"
-                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen></iframe>
-        </p>
+        <p id="instruction"> Please choice a video to watch</p>
+
+        <div id="calm_links">
+            <div class="links_images" id="breathing_click"><div class="calm_links_div"  id="breathing"></div> Breathing exercise</div>
+            <div class="links_images"><div class="calm_links_div" id="listening"></div> The listening game</div>
+            <div class="links_images"><div class="calm_links_div" id="creatures_sea"></div> Creatures of the sea</div>
+            <div class="links_images"><div  class="calm_links_div" id="peace_out"></div> Peace out</div>
+        </div>
+        <div id="calm_video">
+            <video id='calm_video_play' width="650" controls>
+                <source src="static/videos/breathing.mp4" type="video/mp4">
+            </video>
+        </div>
     </div>
 </div>
 <!--Please click here to continue the session.-->

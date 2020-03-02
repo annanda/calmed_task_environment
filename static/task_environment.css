@@ -105,3 +105,55 @@ p#instruction, h1#instruction {
     visibility: visible;
     background-color: #fbfbfb;
 }
+#calm_video{
+    display: none;
+}
+
+.calm_links_div {
+    width: 260px;
+    height: 180px;
+    background-color: #3388aa;
+    float: left;
+    margin-right: 20px;
+    text-align: center;
+}
+
+#calm_links{
+    width: 80%;
+    height: 440px;
+    margin: auto;
+    /*background-color: #dddddd;*/
+}
+#breathing{
+    background-image: url("images/breathing.png");
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;
+}
+#listening {
+    background-image: url("images/listening_game.png");
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;
+}
+#creatures_sea {
+    background-image: url("images/sea_creatures.png");
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;
+}
+
+#peace_out {
+    background-image: url("images/peace_out.png");
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;
+}
+.links_images{
+    width: 260px;
+    height: 210px;
+    float: left;
+    margin-right: 20px;
+    margin-top: 12px;
+    text-align: center;
+}

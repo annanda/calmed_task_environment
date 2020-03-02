@@ -3,7 +3,7 @@ from decouple import config
 one_second = 1000
 one_minute = 60 * one_second
 temp_time = 60 * one_minute
-# temp_time = one_second * 4
+temp_time = one_second * 1000
 TIME_ON_PAGE_TASK = config('TIME_ON_PAGE_TASK', default=temp_time)
 TIME_ON_PAGE_CALMING = config('TIME_ON_PAGE_CALMING', default=temp_time)
 TIME_ON_PAGE_TO_READ = config('TIME_ON_PAGE_TO_READ', default=temp_time)

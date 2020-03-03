@@ -82,7 +82,8 @@ p#instruction, h1#instruction {
     text-align: center;
     font-weight: bold;
 }
-.hidden_button{
+
+.hidden_button {
     visibility: hidden;
     display: inline-block;
     background-color: #3388aa;
@@ -90,22 +91,26 @@ p#instruction, h1#instruction {
     width: 210px;
     height: 80px;
 }
-.hidden_button:hover{
+
+.hidden_button:hover {
     visibility: visible;
     background-color: #fbfbfb;
 }
-.hidden_button_link{
+
+.hidden_button_link {
     text-decoration: none;
     font-size: xx-large;
     width: 210px;
     height: 80px;
     display: inline-block;
 }
-.hidden_button_link:hover{
+
+.hidden_button_link:hover {
     visibility: visible;
     background-color: #fbfbfb;
 }
-#calm_video{
+
+#calm_video {
     display: none;
     margin-top: 20px;
 }
@@ -118,24 +123,45 @@ p#instruction, h1#instruction {
     text-align: center;
 }
 
-#calm_links{
+#calm_links {
     width: 80%;
     height: 440px;
     margin: auto;
     /*background-color: #dddddd;*/
 }
-#breathing{
+
+#breathing {
     background-image: url("images/breathing_small.png");
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */
     background-size: cover;
 }
+
+#breathing:hover {
+    background-image: url("images/breathing_small_hover.png");
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;
+    cursor: pointer;
+
+}
+
 #listening {
-    background-image: url("images/listening_game.png");
+    background-image: url("images/listening_game_small.png");
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */
     background-size: cover;
 }
+
+#listening:hover {
+    background-image: url("images/listening_game_small_hover.png");
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;
+    cursor: pointer;
+
+}
+
 #creatures_sea {
     background-image: url("images/sea_creatures_small.png");
     background-position: center; /* Center the image */
@@ -143,13 +169,31 @@ p#instruction, h1#instruction {
     background-size: cover;
 }
 
+#creatures_sea:hover {
+    background-image: url("images/sea_creatures_small_hover.png");
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;
+    cursor: pointer;
+}
+
 #peace_out {
-    background-image: url("images/peace_out.png");
+    background-image: url("images/peace_out_small.png");
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */
     background-size: cover;
 }
-.links_images{
+
+#peace_out:hover {
+    background-image: url("images/peace_out_small_hover.png");
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;
+    cursor: pointer;
+
+}
+
+.links_images {
     width: 260px;
     height: 210px;
     float: left;

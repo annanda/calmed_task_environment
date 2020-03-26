@@ -3,12 +3,13 @@ from models import db, TaskTime, MoodTime
 from datetime import datetime
 from conf import TIME_ON_PAGE_TASK, TIME_ON_PAGE_CALMING, TIME_ON_PAGE_TO_READ, TIME_ON_PAGE_MOOD, INDEX_BG_IMAGE, \
     CALMING_VIDEO_1, CALMING_VIDEO_2, CALMING_VIDEO_3, CALMING_VIDEO_4, GREEN_ZONE_VIDEO, BLUE_ZONE_VIDEO
+import subprocess
 
 app = Flask(__name__, template_folder="./templates", static_folder='static')
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///saved-times.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db.init_app(app)
-
+RECORD_AV_PROCESS = None
 
 @app.route('/', methods=['GET'])
 def index_page():
@@ -92,6 +93,9 @@ def calming_content_4():
 def ending():
     timestamp = datetime.now()
     adding_db_task_timestamp('ending_page', timestamp)
+    global RECORD_AV_PROCESS
+    RECORD_AV_PROCESS.communicate(b'q')
+    # RECORD_AV_PROCESS.send_signal(signal.SIGINT)
     return render_template('ending.html')
 
 
@@ -110,6 +114,8 @@ def end_game():
 @app.route('/schedule', methods=['GET'])
 def schedule():
     time_on_page = json.dumps(TIME_ON_PAGE_TO_READ)
+    global RECORD_AV_PROCESS
+    RECORD_AV_PROCESS = subprocess.Popen(['python', 'audio_video_record.py'], stdin=subprocess.PIPE)
     return render_template('schedule.html', time_on_page=time_on_page)
 
 

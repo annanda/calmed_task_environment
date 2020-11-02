@@ -1,0 +1,20 @@
+version: '2.3'
+services:
+  nginx:
+    depends_on:
+      - task-environment
+    image: nginx:1.18
+    volumes:
+      - "./nginx_config/my_site:/etc/nginx/conf.d/default.conf"
+    ports:
+      - "80:80"
+    restart: unless-stopped
+  task-environment:
+    image: registry.insight-centre.org/annsou/task-environment:latest
+    build:
+      context: '.'
+      dockerfile: 'Dockerfile'
+    #    volumes:
+    #      - "./:/app"
+    command: gunicorn --bind 0.0.0.0:5000 wsgi:app
+    restart: unless-stopped

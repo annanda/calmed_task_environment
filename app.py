@@ -97,8 +97,8 @@ def ending():
     # this is the timestamp the video record will end
     timestamp = datetime.now()
     adding_db_task_timestamp('ending_page', timestamp)
-    global RECORD_AV_PROCESS
-    RECORD_AV_PROCESS.communicate(b'q')
+    # global RECORD_AV_PROCESS
+    # RECORD_AV_PROCESS.communicate(b'q')
     global ENDING_TIME_AV_RECORD
     ENDING_TIME_AV_RECORD = timestamp
     if STARTING_TIME_AV_RECORD is not None:
@@ -129,8 +129,8 @@ def schedule():
     timestamp = datetime.now()
     adding_db_task_timestamp('schedule_page_initial', timestamp)
     time_on_page = json.dumps(TIME_ON_PAGE_TO_READ)
-    global RECORD_AV_PROCESS
-    RECORD_AV_PROCESS = subprocess.Popen(['python', 'audio_video_record.py'], stdin=subprocess.PIPE)
+    # global RECORD_AV_PROCESS
+    # RECORD_AV_PROCESS = subprocess.Popen(['python', 'audio_video_record.py'], stdin=subprocess.PIPE)
     global STARTING_TIME_AV_RECORD
     STARTING_TIME_AV_RECORD = timestamp
     return render_template('schedule.html', time_on_page=time_on_page)
@@ -202,8 +202,9 @@ def store_av_record_time(start_time, end_time):
 
 
 if __name__ == '__main__':
-    # TODO comment the lines below
+    #  comment the lines below
     # app.app_context().push()
     # db.drop_all()
     # db.create_all()
-    app.run(debug=True, host='0.0.0.0', port=90)
+    # app.run(debug=True, host='0.0.0.0', port=90)
+    app.run(debug=False, host='0.0.0.0', port=5000)

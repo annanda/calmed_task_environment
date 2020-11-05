@@ -21,7 +21,7 @@ CALMING_VIDEO_4 = config('CALMING_VIDEO_4',
                          default='https://www.youtube.com/embed/9_vEZTrmtyA?controls=0&amp;start=21&autoplay=1')
 
 GREEN_ZONE_VIDEO = config('GREEN_ZONE_VIDEO',
-                          default="static/videos/video_test_task_1.mp4")
+                          default="static/videos/green_zone_edit_smaller.mp4")
 
 BLUE_ZONE_VIDEO = config('BLUE_ZONE_VIDEO',
-                         default='https://www.youtube.com/embed/lVrYV0odeFY?controls=0&amp;start=23&autoplay=1')
+                         default='static/videos/blue_boring_smaller.mp4')

@@ -1,16 +1,18 @@
 .schedule_list {
     width: 50%;
     /*display: inline-block;*/
-    float: right;
+    float: left;
     /*height: 70px;*/
     margin-top: 20px;
+    text-align: left;
+    font-size: 24px;
 }
 
 .schedule_img {
     width: 50%;
     height: 70px;
     float: left;
-    /*text-align: center;*/
+    text-align: righ;
 }
 
 #schedule_content {
@@ -20,7 +22,15 @@
     left: 0;
     right: 0;
     margin: auto;
+    /*border: 1px solid lightgray;*/
 }
+
+#schedule_content:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
 
 #start_schedule {
     width: 100%;
@@ -33,6 +43,18 @@
 .done {
     text-decoration: line-through;
 }
-#question_schedule{
+
+#question_schedule {
     visibility: hidden;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.img_schedule_position{
+    float: right;
 }

@@ -53,7 +53,7 @@ window.onload = function () {
         // this is to create the initial slide - welcome slide
         output.push(`
             <div class="slide_wrapper">
-                <p class="question"> Welcome to this quiz</p>
+                <p class="question"> Welcome to this Math test</p>
             </div>
         `);
 

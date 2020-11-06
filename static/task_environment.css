@@ -132,6 +132,13 @@ p#instruction, h1#instruction {
     height: 440px;
     margin: auto;
     /*background-color: #dddddd;*/
+    margin-top: 40px;
+}
+
+#calm_links:after {
+    content: "";
+    display: table;
+    clear: both;
 }
 
 #breathing {

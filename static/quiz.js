@@ -29,21 +29,54 @@ window.onload = function () {
     // where I put the questions
     const myQuestions = [
         {
+            question: "141 + 59 = ?",
+            correctAnswer: "200"
+        },
+        {
+            question: "97 + 75 = ?",
+            correctAnswer: "172"
+        },
+        {
             question: "If 21 x 25 = 525, then <br> <br> 525 ÷ _____ = 25",
             correctAnswer: "21"
         },
         {
-            question: "141 + 59 = ?",
-            correctAnswer: "200"
+            question: "Bill spent less money than Bryce but more money than Julia. Who spent more money, Julia or Bryce?",
+            correctAnswer: "Bryce"
         },
-        // {
-        //     question: "97 + 75 = ?",
-        //     correctAnswer: "172"
-        // },
-        // {
-        //     question: "80 + 93 = ?",
-        //     correctAnswer: "173"
-        // }
+        {
+            question: "Nina earned less money than Ann but more money than Grace. Who earned the most money?",
+            correctAnswer: "Ann"
+        },
+        {
+            question: "Multiply: 12 x 3",
+            correctAnswer: "36"
+        },
+        {
+            question: "How would you write 15 as a Roman numeral?",
+            correctAnswer: "XV"
+        },
+        {
+            question: "What number does this Roman numeral represent? XXX",
+            correctAnswer: "30"
+        },
+        {
+            question: "What number does this Roman numeral represent? XVIII",
+            correctAnswer: "28"
+        },
+        {
+            question: "How would you write 31 as a Roman numeral?",
+            correctAnswer: "XXXI"
+        },
+        {
+            question: "6 tens corresponds to _____ units.",
+            correctAnswer: "60"
+        },
+        {
+            question: "_____ hundreds = 900 units",
+            correctAnswer: "9"
+        },
+
     ];
 
     function buildQuiz() {

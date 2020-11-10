@@ -14,7 +14,7 @@ services:
     build:
       context: '.'
       dockerfile: 'Dockerfile'
-    #    volumes:
-    #      - "./:/app"
+    volumes:
+      - "./static/videos:/app/static/videos"
     command: gunicorn --bind 0.0.0.0:5000 wsgi:app
     restart: unless-stopped

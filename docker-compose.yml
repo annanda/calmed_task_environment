@@ -16,5 +16,6 @@ services:
       dockerfile: 'Dockerfile'
     volumes:
       - "./static/videos:/app/static/videos"
+      - "./saved-times.db:/app/saved-times.db"
     command: gunicorn --bind 0.0.0.0:5000 wsgi:app
     restart: unless-stopped

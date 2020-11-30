@@ -142,8 +142,10 @@ window.onload = function () {
             // if answer is correct
 
             const userAnswer = (answerContainer.querySelector(selector) || {}).value;
+            let userAnswerTrim = userAnswer.trim();
+
             (answerContainer.querySelector(selector) || {}).disabled = true;
-            if (userAnswer === currentQuestion.correctAnswer) {
+            if (userAnswerTrim === currentQuestion.correctAnswer) {
 
                 // add to the number of correct answers
                 numCorrect++;
@@ -220,15 +222,16 @@ window.onload = function () {
         const answerContainer = answerContainers[currentSlide];
         const selector = 'input[name=question' + currentSlide + ']';
         const userAnswer = (answerContainer.querySelector(selector) || {}).value;
+        let userAnswerTrim = userAnswer.trim();
 
         if (userAnswer === "") {
             messagesContainer.innerHTML = "Your answer is empty, please write an answer";
             messagesContainer.style.color = 'red';
 
         } else {
-            if (myQuestions[currentSlide].correctAnswer === userAnswer) {
+            if (myQuestions[currentSlide].correctAnswer === userAnswerTrim) {
                 if (currentSlide === slides.length - 1) {
-                    messagesContainer.innerHTML = ""
+                    messagesContainer.innerHTML = "";
                     // show results if it is the last slide. This way I can delete the current message container content.
                     showResults();
                 } else {

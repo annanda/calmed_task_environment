@@ -7,7 +7,7 @@ window.onload = function () {
     const nextButton = document.getElementById("next");
     const startButton = document.getElementById("start");
 
-    let number_30_sec = 4
+    let number_30_sec = 5;
     let total_seconds = 30 * number_30_sec;
     let c_minutes = parseInt(total_seconds / 60);
     let c_seconds = parseInt(total_seconds % 60);
@@ -17,7 +17,7 @@ window.onload = function () {
         document.getElementById("quiz-time-left").innerHTML = 'Time Left: <br>' + c_minutes + ' minutes ' + c_seconds + ' seconds ';
 
         if (total_seconds <= 0) {
-            showResults();
+            showResults('true');
         } else {
             total_seconds = total_seconds - 1;
             c_minutes = parseInt(total_seconds / 60);
@@ -86,7 +86,7 @@ window.onload = function () {
         // this is to create the initial slide - welcome slide
         output.push(`
             <div class="slide_wrapper">
-                <p class="question"> Welcome to this Math test</p>
+                <p class="question"> Welcome to this Math test. <br>Please answer the questions before the timer is over.</p>
             </div>
         `);
 
@@ -123,7 +123,7 @@ window.onload = function () {
 
     }
 
-    function showResults() {
+    function showResults(timer_out) {
         // to stop the timer
         clearInterval(timer);
         // gather answer containers from our quiz
@@ -145,22 +145,31 @@ window.onload = function () {
             let userAnswerTrim = userAnswer.trim();
 
             (answerContainer.querySelector(selector) || {}).disabled = true;
+            // (answerContainer.querySelector(selector) || {}).style.backgroundColor = 'lightgray';
             if (userAnswerTrim === currentQuestion.correctAnswer) {
 
                 // add to the number of correct answers
                 numCorrect++;
                 // color the answers green
                 answerContainers[questionNumber].style.color = 'lightgreen';
+                (answerContainer.querySelector(selector) || {}).style.backgroundColor = 'green';
+                (answerContainer.querySelector(selector) || {}).style.color = 'white';
             }
             // if answer is wrong or blank
             else {
                 // color the answers red
+                (answerContainer.querySelector(selector) || {}).style.backgroundColor = 'red';
+                (answerContainer.querySelector(selector) || {}).style.color = 'white';
                 answerContainers[questionNumber].style.color = 'red';
             }
         });
 
-        // show number of correct answers out of total
-        resultsContainer.innerHTML = 'You got ' + numCorrect + ' out of ' + myQuestions.length + '. <br> Well done!!!';
+        if (timer_out === 'true') {
+            resultsContainer.innerHTML = 'Your time is over.<br>You got ' + numCorrect + ' out of ' + myQuestions.length + '.';
+        } else {
+            // show number of correct answers out of total
+            resultsContainer.innerHTML = 'You got ' + numCorrect + ' out of ' + myQuestions.length + '. <br> Well done!!!';
+        }
     }
 
     // display quiz right away
@@ -209,7 +218,7 @@ window.onload = function () {
         }
         if (currentSlide === slides.length - 1) {
             nextButton.style.display = 'none';
-            submitButton.style.display = 'inline-block';
+            submitButton.style.display = 'block';
         } else {
             nextButton.style.display = 'inline-block';
             submitButton.style.display = 'none';
@@ -225,21 +234,37 @@ window.onload = function () {
         let userAnswerTrim = userAnswer.trim();
 
         if (userAnswer === "") {
-            messagesContainer.innerHTML = "Your answer is empty, please write an answer";
-            messagesContainer.style.color = 'red';
+            // messagesContainer.innerHTML = "Your answer is empty, please write an answer";
+            // messagesContainer.style.color = 'red';
+            if (currentSlide === slides.length - 1) {
+                    messagesContainer.innerHTML = "";
+                    // show results if it is the last slide. This way I can delete the current message container content.
+                    showResults('false');
+                } else {
+                    // (answerContainer.querySelector(selector) || {}).disabled = true;
+                    (answerContainer.querySelector(selector) || {}).style.backgroundColor = 'white';
+                    // (answerContainer.querySelector(selector) || {}).style.color = 'white';
+                    showSlide(currentSlide + 1);
+                    messagesContainer.innerHTML = ""
+                }
 
         } else {
             if (myQuestions[currentSlide].correctAnswer === userAnswerTrim) {
                 if (currentSlide === slides.length - 1) {
                     messagesContainer.innerHTML = "";
                     // show results if it is the last slide. This way I can delete the current message container content.
-                    showResults();
+                    showResults('false');
                 } else {
+                    (answerContainer.querySelector(selector) || {}).disabled = true;
+                    (answerContainer.querySelector(selector) || {}).style.backgroundColor = 'green';
+                    (answerContainer.querySelector(selector) || {}).style.color = 'white';
                     showSlide(currentSlide + 1);
                     messagesContainer.innerHTML = ""
                 }
             } else {
-                messagesContainer.innerHTML = "Your answer is not correct, please try again";
+                (answerContainer.querySelector(selector) || {}).style.backgroundColor = 'red';
+                (answerContainer.querySelector(selector) || {}).style.color = 'white';
+                messagesContainer.innerHTML = "Your answer is not correct, please try again <br> or leave it empty to go to the next question.";
                 messagesContainer.style.color = 'red';
             }
         }

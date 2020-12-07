@@ -10,7 +10,7 @@ TIME_ON_PAGE_TASK = config('TIME_ON_PAGE_TASK', default=temp_time)
 TIME_ON_PAGE_CALMING = config('TIME_ON_PAGE_CALMING', default=temp_time)
 TIME_ON_PAGE_TO_READ = config('TIME_ON_PAGE_TO_READ', default=one_minute)
 TIME_ON_PAGE_MOOD = config('TIME_ON_PAGE_MOOD', default=one_minute)
-INDEX_BG_IMAGE = config('INDEX_BG_IMAGE', default='static/images/background_image.png')
+INDEX_BG_IMAGE = config('INDEX_BG_IMAGE', default='static/images/start_image.jpeg')
 CALMING_VIDEO_1 = config('CALMING_VIDEO_1',
                          default='https://www.youtube.com/embed/9A0S54yAgEg?controls=0&start=21&autoplay=1')
 CALMING_VIDEO_2 = config('CALMING_VIDEO_2',

@@ -7,7 +7,7 @@ window.onload = function () {
     const nextButton = document.getElementById("next");
     const startButton = document.getElementById("start");
 
-    let number_30_sec = 5;
+    let number_30_sec = 7;
     let total_seconds = 30 * number_30_sec;
     let c_minutes = parseInt(total_seconds / 60);
     let c_seconds = parseInt(total_seconds % 60);

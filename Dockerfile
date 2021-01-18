@@ -6,7 +6,7 @@ RUN apt-get update -y \
         python3-pip \
         python3-dev \
         locales \
-    && locale-gen en_US.UTF-8
+    && locale-gen en_US.UTF-8 \
     && rm -rf /var/lib/apt/lists/*
 COPY ./requirements.txt /app/requirements.txt
 WORKDIR /app

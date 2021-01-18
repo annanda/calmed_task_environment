@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" href="../static/quiz.css">
 </head>
 <body>
-<a class="hidden_button_link" href={{ 'mood?task=third_task&time_next=' + time_on_page}}><div class="hidden_button">go on</div></a>
+<a class="hidden_button_link" href={{ 'mood?task=third_task&time_next=' + time_on_page_to_read}}><div class="hidden_button">go on</div></a>
 
 <div id="wrapper">
     <div id="content">
@@ -29,9 +29,10 @@
 </div>
 <script>
     time_to_move = JSON.parse({{ time_on_page | tojson}});
+    time_to_the_next = JSON.parse({{ time_on_page_to_read | tojson}});
     setTimeout(function () {
         // window.location.href = 'calming_content_3';
-        window.location.href = 'mood?task=third_task&time_next=' + time_to_move;;
+        window.location.href = 'mood?task=third_task&time_next=' + time_to_the_next;;
     }, time_to_move);
 </script>
 </body>

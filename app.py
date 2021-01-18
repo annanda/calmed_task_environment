@@ -51,7 +51,8 @@ def third_task():
     timestamp = datetime.now()
     adding_db_task_timestamp('third_task', timestamp)
     time_on_page = json.dumps(TIME_ON_PAGE_TASK)
-    return render_template('third_task.html', time_on_page=time_on_page)
+    time_on_page_to_read = json.dumps(TIME_ON_PAGE_TO_READ)
+    return render_template('third_task.html', time_on_page=time_on_page, time_on_page_to_read=time_on_page_to_read)
 
 
 @app.route('/forth_task', methods=['GET'])
@@ -59,7 +60,8 @@ def forth_task():
     timestamp = datetime.now()
     adding_db_task_timestamp('forth_task', timestamp)
     time_on_page = json.dumps(TIME_ON_PAGE_TASK)
-    return render_template('forth_task.html', time_on_page=time_on_page, blue_video=BLUE_ZONE_VIDEO)
+    time_on_page_to_read = json.dumps(TIME_ON_PAGE_TO_READ)
+    return render_template('forth_task.html', time_on_page=time_on_page, time_on_page_to_read=time_on_page_to_read, blue_video=BLUE_ZONE_VIDEO)
 
 
 @app.route('/calming_content', methods=['GET'])
@@ -114,7 +116,8 @@ def game():
     timestamp = datetime.now()
     adding_db_task_timestamp('game_page', timestamp)
     time_on_page = json.dumps(TIME_ON_PAGE_TASK)
-    return render_template('game.html', time_on_page=time_on_page)
+    time_on_page_to_read = json.dumps(TIME_ON_PAGE_TO_READ)
+    return render_template('game.html', time_on_page=time_on_page, time_on_page_to_read=time_on_page_to_read)
 
 
 @app.route('/end_game', methods=['GET'])

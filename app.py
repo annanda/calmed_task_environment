@@ -43,7 +43,8 @@ def second_task():
     timestamp = datetime.now()
     adding_db_task_timestamp('second_task', timestamp)
     time_on_page = json.dumps(TIME_ON_PAGE_TASK)
-    return render_template('second_task.html', time_on_page=time_on_page)
+    time_on_page_to_read = json.dumps(TIME_ON_PAGE_TO_READ)
+    return render_template('second_task.html', time_on_page=time_on_page, time_on_page_to_read=time_on_page_to_read)
 
 
 @app.route('/third_task', methods=['GET'])

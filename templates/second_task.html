@@ -24,11 +24,11 @@
     </div>
 </div>
 <script>
-    time_to_move = JSON.parse({{ time_on_page | tojson}});
+    time_to_the_next = JSON.parse({{ time_on_page_to_read | tojson}});
     setTimeout(function () {
         // window.location.href = 'calming_content_2';
         window.location.href = 'game';
-    }, time_to_move);
+    }, time_to_the_next);
 </script>
 </body>
 </html>

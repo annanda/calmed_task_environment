@@ -146,7 +146,7 @@ window.onload = function () {
 
             (answerContainer.querySelector(selector) || {}).disabled = true;
             // (answerContainer.querySelector(selector) || {}).style.backgroundColor = 'lightgray';
-            if (userAnswerTrim === currentQuestion.correctAnswer) {
+            if (userAnswerTrim.toLowerCase() === currentQuestion.correctAnswer.toLowerCase()) {
 
                 // add to the number of correct answers
                 numCorrect++;
@@ -249,7 +249,7 @@ window.onload = function () {
                 }
 
         } else {
-            if (myQuestions[currentSlide].correctAnswer === userAnswerTrim) {
+            if (myQuestions[currentSlide].correctAnswer.toLowerCase() === userAnswerTrim.toLowerCase()) {
                 if (currentSlide === slides.length - 1) {
                     messagesContainer.innerHTML = "";
                     // show results if it is the last slide. This way I can delete the current message container content.

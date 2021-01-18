@@ -38,3 +38,13 @@ body {
 a {
     text-decoration: none;
 }
+
+#game_information {
+    width: 60%;
+    margin: 0px auto;
+    font-size: xx-large;
+    text-align: center;
+    font-family: sans-serif;
+    color: #333;
+    margin-bottom: 20px;
+}

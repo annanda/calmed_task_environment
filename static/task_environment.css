@@ -107,6 +107,9 @@ p#instruction, h1#instruction {
     color: white;
     width: 210px;
     height: 80px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
 }
 
 .hidden_button:hover {
@@ -120,6 +123,9 @@ p#instruction, h1#instruction {
     width: 210px;
     height: 80px;
     display: inline-block;
+    position: fixed;
+    bottom: 0;
+    right: 0;
 }
 
 .hidden_button_link:hover {

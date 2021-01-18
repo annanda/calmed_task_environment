@@ -19,7 +19,7 @@ h1#worksheet {
 
 .question {
     font-weight: 600;
-    FONT-SIZE: xx-large;
+    FONT-SIZE: x-large;
     margin-bottom: 20px;
     text-align: center;
 }
@@ -111,10 +111,11 @@ input[type=text]:disabled {
 }
 
 #quiz-time-left {
-    width: 26%;
+    width: 36%;
     float: right;
     color: red;
     font-weight: bold;
+    font-size: 32px;
 }
 #messages{
     font-size: 40px;

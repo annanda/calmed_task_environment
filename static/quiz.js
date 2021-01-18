@@ -42,11 +42,11 @@ window.onload = function () {
             correctAnswer: "21"
         },
         {
-            question: "Bill spent less money than Bryce but more money than Julia. Who spent more money, Julia or Bryce?",
+            question: "Bill spent less money than Bryce but more money than Julia. <br>Who spent more money, Julia or Bryce?",
             correctAnswer: "Bryce"
         },
         {
-            question: "Nina earned less money than Ann but more money than Grace. Who earned the most money?",
+            question: "Nina earned less money than Ann but more money than Grace. <br>Who earned the most money?",
             correctAnswer: "Ann"
         },
         {

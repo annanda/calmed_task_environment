@@ -2,12 +2,13 @@ from decouple import config
 
 one_second = 1000
 one_minute = 60 * one_second
-temp_time = 3 * one_minute
-temp_time = one_second * 1000
 five_minutes = one_minute * 5
 three_seconds = one_second * 3
-TIME_ON_PAGE_TASK = config('TIME_ON_PAGE_TASK', default=temp_time)
-TIME_ON_PAGE_CALMING = config('TIME_ON_PAGE_CALMING', default=temp_time)
+three_and_half = (3 * one_minute) + (30 * one_second)
+temp_time = five_minutes * 1
+two_minutes = 2 * one_minute
+TIME_ON_PAGE_TASK = config('TIME_ON_PAGE_TASK', default=three_and_half)
+TIME_ON_PAGE_CALMING = config('TIME_ON_PAGE_CALMING', default=two_minutes)
 TIME_ON_PAGE_TO_READ = config('TIME_ON_PAGE_TO_READ', default=one_minute)
 TIME_ON_PAGE_MOOD = config('TIME_ON_PAGE_MOOD', default=one_minute)
 INDEX_BG_IMAGE = config('INDEX_BG_IMAGE', default='static/images/start_image.jpeg')

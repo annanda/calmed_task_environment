@@ -11,7 +11,7 @@
 </head>
 
 <body>
-<a class="hidden_button_link" href={{ "mood?task=first_task&time_next=" + time_on_page}}><div class="hidden_button">go on</div></a>
+<a class="hidden_button_link" href={{ "mood?task=first_task&time_next=" + time_on_page_to_read}}><div class="hidden_button">go on</div></a>
 <div id="wrapper">
     <div id="content">
         <h1>This is the first task</h1>
@@ -30,9 +30,10 @@
 <!--</p>-->
 <script>
     time_to_move = JSON.parse({{ time_on_page | tojson}});
+    time_to_the_next = JSON.parse({{ time_on_page_to_read | tojson}});
     setTimeout(function () {
         // window.location.href = 'calming_content';
-        window.location.href = 'mood?task=first_task&time_next=' + time_to_move;
+        window.location.href = 'mood?task=first_task&time_next=' + time_to_the_next;
     }, time_to_move );
 </script>
 </body>

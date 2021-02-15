@@ -17,7 +17,7 @@ window.onload = function () {
     document.getElementById("creatures_sea_click").onclick = function () {
         document.getElementById("calm_links").style.display = "none";
         document.getElementById("calm_video").style.display = "block";
-        document.getElementById('calm_video_play').src = 'static/videos/sea_creatures_less_quality.mp4';
+        document.getElementById('calm_video_play').src = 'static/videos/sea_creatures.mp4';
         document.getElementById('calm_video_play').currentTime = 14;
         document.getElementById("calm_video_play").play()
     }

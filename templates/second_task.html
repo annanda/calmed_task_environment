@@ -6,7 +6,12 @@
     <link rel="stylesheet" type="text/css" href="../static/schedule.css">
 </head>
 <body>
-<a class="hidden_button_link" href="game"><div class="hidden_button">go on</div></a>
+{% if session_number == 2 %}
+    <a class="hidden_button_link" href="game_2"><div class="hidden_button">go on</div></a>
+{% else %}
+    <a class="hidden_button_link" href="game"><div class="hidden_button">go on</div></a>
+{% endif %}
+
 
 <div id="wrapper">
     <div id="content">
@@ -19,7 +24,13 @@
             <!--                    frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"-->
             <!--                    allowfullscreen></iframe>-->
             <br><br>
-            <a href="/game" class="schedule_button">Play now!</a>
+            {% if session_number == 2 %}
+                <a href="/game_2" class="schedule_button">Play now!</a>
+            {% else %}
+                <a href="/game" class="schedule_button">Play now!</a>
+            {% endif %}
+
+
         </p>
     </div>
 </div>

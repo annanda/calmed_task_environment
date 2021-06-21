@@ -29,3 +29,4 @@ GREEN_ZONE_VIDEO = config('GREEN_ZONE_VIDEO',
 
 BLUE_ZONE_VIDEO = config('BLUE_ZONE_VIDEO',
                          default='static/videos/BORING_video_480p.mp4')
+SESSION_NUMBER = config('SESSION_NUMBER', default=1)

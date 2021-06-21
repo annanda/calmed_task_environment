@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, json
 from models import db, TaskTime, MoodTime, AVRecordTime
 from datetime import datetime
 from conf import TIME_ON_PAGE_TASK, TIME_ON_PAGE_CALMING, TIME_ON_PAGE_TO_READ, TIME_ON_PAGE_MOOD, INDEX_BG_IMAGE, \
-    CALMING_VIDEO_1, CALMING_VIDEO_2, CALMING_VIDEO_3, CALMING_VIDEO_4, GREEN_ZONE_VIDEO, BLUE_ZONE_VIDEO
+    CALMING_VIDEO_1, CALMING_VIDEO_2, CALMING_VIDEO_3, CALMING_VIDEO_4, GREEN_ZONE_VIDEO, BLUE_ZONE_VIDEO, SESSION_NUMBER
 import subprocess
 
 app = Flask(__name__, template_folder="./templates", static_folder='static')
@@ -44,7 +44,9 @@ def second_task():
     adding_db_task_timestamp('second_task', timestamp)
     time_on_page = json.dumps(TIME_ON_PAGE_TASK)
     time_on_page_to_read = json.dumps(TIME_ON_PAGE_TO_READ)
-    return render_template('second_task.html', time_on_page=time_on_page, time_on_page_to_read=time_on_page_to_read)
+    session_number = int(SESSION_NUMBER)
+    return render_template('second_task.html', time_on_page=time_on_page, time_on_page_to_read=time_on_page_to_read,
+                           session_number=session_number)
 
 
 @app.route('/third_task', methods=['GET'])
@@ -63,6 +65,15 @@ def forth_task():
     time_on_page = json.dumps(TIME_ON_PAGE_TASK)
     time_on_page_to_read = json.dumps(TIME_ON_PAGE_TO_READ)
     return render_template('forth_task.html', time_on_page=time_on_page, time_on_page_to_read=time_on_page_to_read, blue_video=BLUE_ZONE_VIDEO)
+
+
+@app.route('/game', methods=['GET'])
+def game_2():
+    timestamp = datetime.now()
+    adding_db_task_timestamp('game_page', timestamp)
+    time_on_page = json.dumps(TIME_ON_PAGE_TASK)
+    time_on_page_to_read = json.dumps(TIME_ON_PAGE_TO_READ)
+    return render_template('game_2.html', time_on_page=time_on_page, time_on_page_to_read=time_on_page_to_read)
 
 
 @app.route('/calming_content', methods=['GET'])

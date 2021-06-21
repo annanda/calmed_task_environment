@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% include 'header.html' %}
+    <link rel="stylesheet" type="text/css" href="../static/schedule.css">
+    <link rel="stylesheet" type="text/css" href="../static/quiz.css">
+    <link rel="stylesheet" type="text/css" href="../static/game.css">
+    <script src="../static/pacman.js"></script>
+    <script src="../static/modernizr-1.5.min.js"></script>
+
+</head>
+
+<body>
+<div id="game_information">Press N to start the game. <br>User the arrows of your keyborad to move (↑ ↓ → ←). </div>
+<a class="hidden_button_link" href={{ "mood?task=second_task&time_next=" + time_on_page_to_read}}><div class="hidden_button">go on</div></a>
+<!--<div id="wrapper">-->
+<!--    <div id="content">-->
+<!--        <h1>This is the second task</h1>-->
+<!--        <p id="instruction">Game time! Enjoy</p>-->
+
+        <div id="pacman"></div>
+
+<!--        </div>-->
+<!--    </div>-->
+    <script>
+        time_to_move = JSON.parse({{ time_on_page | tojson}});
+        time_to_the_next = JSON.parse({{ time_on_page_to_read | tojson}});
+        setTimeout(function () {
+            window.location.href = 'mood?task=second_task&time_next=' + time_to_the_next;
+        }, time_to_move);
+
+        var el = document.getElementById("pacman");
+
+    if (Modernizr.canvas && Modernizr.localstorage &&
+        Modernizr.audio && (Modernizr.audio.ogg || Modernizr.audio.mp3)) {
+        window.setTimeout(function () {
+            PACMAN.init(el, "./");
+        }, 0);
+    } else {
+        el.innerHTML = "Sorry, needs a decent browser<br /><small>" +
+            "(firefox 3.6+, Chrome 4+, Opera 10+ and Safari 4+)</small>";
+    }
+
+    </script>
+
+<div id="shim">shim for font face</div>
+
+<h1>HTML5 Pacman</h1>
+
+
+
+
+
+
+</body>
+</html>

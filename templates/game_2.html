@@ -1,51 +1,60 @@
-<!DOCTYPE html>
-<html>
-<head>
-    {% include 'header.html' %}
-    <link rel="stylesheet" type="text/css" href="../static/schedule.css">
-    <link rel="stylesheet" type="text/css" href="../static/quiz.css">
-    <link rel="stylesheet" type="text/css" href="../static/game.css">
-    <script src="../static/pacman.js"></script>
-    <script src="../static/modernizr-1.5.min.js"></script>
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <title>Clumsy Bird</title>
+        <link rel="shortcut icon" href="data/img/favicon.ico">
+        <link rel="stylesheet" type="text/css" media="screen" href="static/index.css">
+        <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta charset="UTF-8" />
+        <meta name="description" content="Clumsy Bird - A Flappy Bird clone using MelonJS"/>
+        <meta name="keywords" content="flappybird, flappy, bird, game, html5, melonjs,clone"/>
 
-</head>
 
-<body>
-<div id="game_information">Press N to start the game. <br>User the arrows of your keyborad to move (↑ ↓ → ←). </div>
-<a class="hidden_button_link" href={{ "mood?task=second_task&time_next=" + time_on_page_to_read}}><div class="hidden_button">go on</div></a>
-<!--<div id="wrapper">-->
-<!--    <div id="content">-->
-<!--        <h1>This is the second task</h1>-->
-<!--        <p id="instruction">Game time! Enjoy</p>-->
+        <!-- Humans -->
+<!--        <link rel="author" href="humans.txt" />-->
+    </head>
 
-        <div id="pacman"></div>
+    <body>
+        <!-- Canvas placeholder -->
+        <div><button type="button" id="button_restart">Restart Game</button>
+        <p id="txt"></p></div>
+        <div id="screen"></div>
 
-<!--        </div>-->
-<!--    </div>-->
-    <script>
-        time_to_move = JSON.parse({{ time_on_page | tojson}});
-        time_to_the_next = JSON.parse({{ time_on_page_to_read | tojson}});
-        setTimeout(function () {
-            window.location.href = 'mood?task=second_task&time_next=' + time_to_the_next;
-        }, time_to_move);
+        <!-- melonJS Library -->
+        <script type="text/javascript" src="static/js/melonJS-min.js" ></script>
+        <script type="text/javascript" src="static/build/clumsy-min.js" ></script>
+        <script type="text/javascript">
+             time_to_move = JSON.parse({{ time_on_page | tojson}});
+            time_to_the_next = JSON.parse({{ time_on_page_to_read | tojson}});
+            setTimeout(function () {
+                window.location.href = 'mood?task=second_task&time_next=' + time_to_the_next;
+            }, time_to_move);
 
-        var el = document.getElementById("pacman");
+            let time_number = {{ time_passed }}
+            window.onReady(function onReady() {
+                game.onload();
+                startTime();
+                document.getElementById('button_restart').onclick = function(){
+                    window.location ='/game_2?time_passed='+ time_number
+                };
+            });
+            function startTime()
+            {
+              setInterval(plus_one, 1000);
+            }
 
-    if (Modernizr.canvas && Modernizr.localstorage &&
-        Modernizr.audio && (Modernizr.audio.ogg || Modernizr.audio.mp3)) {
-        window.setTimeout(function () {
-            PACMAN.init(el, "./");
-        }, 0);
-    } else {
-        el.innerHTML = "Sorry, needs a decent browser<br /><small>" +
-            "(firefox 3.6+, Chrome 4+, Opera 10+ and Safari 4+)</small>";
-    }
+            function plus_one(){
+              document.getElementById('txt').innerHTML="Timer: "+ time_number;
+              time_number = time_number + 1;
+            }
 
-    </script>
+            // function reload_screen(){
+            //     window.location ='/game_2'
+            // }
+        </script>
 
-<div id="shim">shim for font face</div>
-
-<h1>HTML5 Pacman</h1>
+    </body>
+</html>
 
 
 

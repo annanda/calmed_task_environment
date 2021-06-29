@@ -1,4 +1,8 @@
 from decouple import config
+import os
+
+SOURCE_DIR = os.path.dirname(os.path.abspath(__file__))
+STATIC_DIR_DATA = os.path.join(SOURCE_DIR, 'static', 'data')
 
 one_second = 1000
 one_minute = 60 * one_second
@@ -9,7 +13,7 @@ temp_time = five_minutes * 1
 two_minutes = 2 * one_minute
 thirty_five_seconds = 35 * one_second
 forty_seconds = 40 * one_second
-TIME_ON_PAGE_TASK = config('TIME_ON_PAGE_TASK', default=three_and_half)
+TIME_ON_PAGE_TASK = config('TIME_ON_PAGE_TASK', default=one_minute)
 TIME_ON_GAME = config('TIME_ON_GAME', default=two_minutes)
 TIME_ON_PAGE_CALMING = config('TIME_ON_PAGE_CALMING', default=two_minutes)
 TIME_ON_PAGE_TO_READ = config('TIME_ON_PAGE_TO_READ', default=thirty_five_seconds)
@@ -30,3 +34,4 @@ GREEN_ZONE_VIDEO = config('GREEN_ZONE_VIDEO',
 BLUE_ZONE_VIDEO = config('BLUE_ZONE_VIDEO',
                          default='static/videos/BORING_video_480p.mp4')
 SESSION_NUMBER = config('SESSION_NUMBER', default=1)
+CUSTOM_STATIC_PATH = config('CUSTOM_STATIC_PATH', default=STATIC_DIR_DATA)

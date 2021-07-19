@@ -4,7 +4,7 @@ from datetime import datetime
 from conf import (
     TIME_ON_PAGE_TASK, TIME_ON_PAGE_CALMING, TIME_ON_PAGE_TO_READ, TIME_ON_PAGE_MOOD, INDEX_BG_IMAGE,
     CALMING_VIDEO_1, CALMING_VIDEO_2, CALMING_VIDEO_3, CALMING_VIDEO_4, GREEN_ZONE_VIDEO, BLUE_ZONE_VIDEO,
-    SESSION_NUMBER, CUSTOM_STATIC_PATH
+    SESSION_NUMBER, CUSTOM_STATIC_PATH, TIME_ON_GAME
 )
 import subprocess
 
@@ -133,7 +133,7 @@ def game_2():
     adding_db_task_timestamp('game_page', timestamp)
     time_passed = request.args.get("time_passed") if request.args.get("time_passed") is not None else 0
     print(f'time passed: {time_passed}')
-    time_on_page = TIME_ON_PAGE_TASK - (int(time_passed) * 1000)
+    time_on_page = TIME_ON_GAME - (int(time_passed) * 1000)
     time_on_page = json.dumps(time_on_page)
     print(time_on_page)
     time_on_page_to_read = json.dumps(TIME_ON_PAGE_TO_READ)

@@ -1,0 +1,23 @@
+#button_restart {
+    float: left;
+}
+
+#txt{
+    float: left;
+    display: none;
+}
+#button_restart {
+    margin-left: 30px;
+    margin-top: 10px;
+    /*float: left;*/
+    position: absolute;
+    width: 120px;
+    height: 80px;
+    font-size: 24px;
+    background-color: #4CAF50;;
+    border: none;
+    color: white;
+}
+#button_restart:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}

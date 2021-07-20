@@ -16,6 +16,10 @@ services:
       dockerfile: 'Dockerfile'
     volumes:
       - "./static/videos:/app/static/videos"
+      - "./static/videos:/app/static/audio"
+      - "./static/videos:/app/static/data"
       - "./saved-times.db:/app/saved-times.db"
+    environment:
+      - SESSION_NUMBER=${SESSION_NUMBER}
     command: gunicorn --bind 0.0.0.0:5000 wsgi:app
     restart: unless-stopped

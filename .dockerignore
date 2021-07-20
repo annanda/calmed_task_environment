@@ -1,2 +1,5 @@
 .git/*
 static/videos/*
+static/audio/*
+static/data/*
+.env

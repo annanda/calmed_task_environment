@@ -10,7 +10,7 @@ services:
       - "80:80"
     restart: unless-stopped
   task-environment:
-    image: registry.insight-centre.org/annsou/task-environment:pilot
+    image: registry.insight-centre.org/annsou/task-environment:session
     build:
       context: '.'
       dockerfile: 'Dockerfile'

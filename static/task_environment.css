@@ -132,6 +132,19 @@ p#instruction, h1#instruction {
     visibility: visible;
     background-color: #fbfbfb;
 }
+.hidden_button_link_game_2{
+    text-decoration: none;
+    font-size: xx-large;
+    width: 210px;
+    height: 80px;
+    display: inline-block;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+.hidden_button_link_game_2:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
 
 #calm_video {
     display: none;

@@ -1,8 +1,11 @@
-from flask import Flask, render_template, request, json
+from flask import Flask, render_template, request, json, send_from_directory
 from models import db, TaskTime, MoodTime, AVRecordTime
 from datetime import datetime
-from conf import TIME_ON_PAGE_TASK, TIME_ON_PAGE_CALMING, TIME_ON_PAGE_TO_READ, TIME_ON_PAGE_MOOD, INDEX_BG_IMAGE, \
-    CALMING_VIDEO_1, CALMING_VIDEO_2, CALMING_VIDEO_3, CALMING_VIDEO_4, GREEN_ZONE_VIDEO, BLUE_ZONE_VIDEO
+from conf import (
+    TIME_ON_PAGE_TASK, TIME_ON_PAGE_CALMING, TIME_ON_PAGE_TO_READ, TIME_ON_PAGE_MOOD, INDEX_BG_IMAGE,
+    CALMING_VIDEO_1, CALMING_VIDEO_2, CALMING_VIDEO_3, CALMING_VIDEO_4, GREEN_ZONE_VIDEO, BLUE_ZONE_VIDEO,
+    SESSION_NUMBER, CUSTOM_STATIC_PATH, TIME_ON_GAME
+)
 import subprocess
 
 app = Flask(__name__, template_folder="./templates", static_folder='static')
@@ -44,7 +47,9 @@ def second_task():
     adding_db_task_timestamp('second_task', timestamp)
     time_on_page = json.dumps(TIME_ON_PAGE_TASK)
     time_on_page_to_read = json.dumps(TIME_ON_PAGE_TO_READ)
-    return render_template('second_task.html', time_on_page=time_on_page, time_on_page_to_read=time_on_page_to_read)
+    session_number = int(SESSION_NUMBER)
+    return render_template('second_task.html', time_on_page=time_on_page, time_on_page_to_read=time_on_page_to_read,
+                           session_number=session_number)
 
 
 @app.route('/third_task', methods=['GET'])
@@ -62,7 +67,8 @@ def forth_task():
     adding_db_task_timestamp('forth_task', timestamp)
     time_on_page = json.dumps(TIME_ON_PAGE_TASK)
     time_on_page_to_read = json.dumps(TIME_ON_PAGE_TO_READ)
-    return render_template('forth_task.html', time_on_page=time_on_page, time_on_page_to_read=time_on_page_to_read, blue_video=BLUE_ZONE_VIDEO)
+    return render_template('forth_task.html', time_on_page=time_on_page, time_on_page_to_read=time_on_page_to_read,
+                           blue_video=BLUE_ZONE_VIDEO)
 
 
 @app.route('/calming_content', methods=['GET'])
@@ -119,6 +125,25 @@ def game():
     time_on_page = json.dumps(TIME_ON_PAGE_TASK)
     time_on_page_to_read = json.dumps(TIME_ON_PAGE_TO_READ)
     return render_template('game.html', time_on_page=time_on_page, time_on_page_to_read=time_on_page_to_read)
+
+
+@app.route('/game_2', methods=['GET'])
+def game_2():
+    timestamp = datetime.now()
+    adding_db_task_timestamp('game_page', timestamp)
+    time_passed = request.args.get("time_passed") if request.args.get("time_passed") is not None else 0
+    print(f'time passed: {time_passed}')
+    time_on_page = TIME_ON_GAME - (int(time_passed) * 1000)
+    time_on_page = json.dumps(time_on_page)
+    print(time_on_page)
+    time_on_page_to_read = json.dumps(TIME_ON_PAGE_TO_READ)
+    return render_template('game_2.html', time_on_page=time_on_page, time_on_page_to_read=time_on_page_to_read,
+                           time_passed=time_passed)
+
+
+@app.route('/data/<path:filename>')
+def custom_static(filename):
+    return send_from_directory(CUSTOM_STATIC_PATH, filename)
 
 
 @app.route('/end_game', methods=['GET'])

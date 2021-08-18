@@ -35,3 +35,5 @@ BLUE_ZONE_VIDEO = config('BLUE_ZONE_VIDEO',
                          default='static/videos/BORING_video_480p.mp4')
 SESSION_NUMBER = config('SESSION_NUMBER', default=1)
 CUSTOM_STATIC_PATH = config('CUSTOM_STATIC_PATH', default=STATIC_DIR_DATA)
+MATH_TASK_LEVEL = config('MATH_TASK_LEVEL', default='general')
+# Options {'general': 'all mixed', 'younger': questions from 8-9 years, 'older': questions from 10-11-12 years old}

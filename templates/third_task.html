@@ -2,8 +2,15 @@
 <html lang="en">
 <head>
     {% include 'header.html' %}
-    <script type="text/javascript" src="../static/quiz.js"></script>
     <link rel="stylesheet" type="text/css" href="../static/quiz.css">
+<!--    {% print(math_level_conf) %}-->
+    {% if math_level_conf == 'general' %}
+        <script type="text/javascript" src="../static/quiz.js"></script>
+    {% elif math_level_conf == "younger" %}
+        <script type="text/javascript" src="../static/quiz_younger.js"></script>
+    {% else %}
+        <script type="text/javascript" src="../static/quiz_older.js"></script>
+    {% endif %}
 </head>
 <body>
 

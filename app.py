@@ -4,7 +4,7 @@ from datetime import datetime
 from conf import (
     TIME_ON_PAGE_TASK, TIME_ON_PAGE_CALMING, TIME_ON_PAGE_TO_READ, TIME_ON_PAGE_MOOD, INDEX_BG_IMAGE,
     CALMING_VIDEO_1, CALMING_VIDEO_2, CALMING_VIDEO_3, CALMING_VIDEO_4, GREEN_ZONE_VIDEO, BLUE_ZONE_VIDEO,
-    SESSION_NUMBER, CUSTOM_STATIC_PATH, TIME_ON_GAME
+    SESSION_NUMBER, CUSTOM_STATIC_PATH, TIME_ON_GAME, MATH_TASK_LEVEL
 )
 import subprocess
 
@@ -58,7 +58,13 @@ def third_task():
     adding_db_task_timestamp('third_task', timestamp)
     time_on_page = json.dumps(TIME_ON_PAGE_TASK)
     time_on_page_to_read = json.dumps(TIME_ON_PAGE_TO_READ)
-    return render_template('third_task.html', time_on_page=time_on_page, time_on_page_to_read=time_on_page_to_read)
+    math_level_conf = str(MATH_TASK_LEVEL)
+    print(math_level_conf)
+    print(type(math_level_conf))
+    return render_template('third_task.html',
+                           time_on_page=time_on_page,
+                           time_on_page_to_read=time_on_page_to_read,
+                           math_level_conf=math_level_conf)
 
 
 @app.route('/forth_task', methods=['GET'])

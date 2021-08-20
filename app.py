@@ -59,8 +59,6 @@ def third_task():
     time_on_page = json.dumps(TIME_ON_PAGE_TASK)
     time_on_page_to_read = json.dumps(TIME_ON_PAGE_TO_READ)
     math_level_conf = str(MATH_TASK_LEVEL)
-    print(math_level_conf)
-    print(type(math_level_conf))
     return render_template('third_task.html',
                            time_on_page=time_on_page,
                            time_on_page_to_read=time_on_page_to_read,

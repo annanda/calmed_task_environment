@@ -6,6 +6,7 @@ window.onload = function () {
     const previousButton = document.getElementById("previous");
     const nextButton = document.getElementById("next");
     const startButton = document.getElementById("start");
+    const restartButton = document.getElementById("restart");
 
     let number_30_sec = 6;
     let total_seconds = 30 * number_30_sec;
@@ -30,8 +31,8 @@ window.onload = function () {
     const myQuestions = [
 
         {
-            question: "Younger",
-            correctAnswer: "Yes!"
+            question: "141 + 59 = ?",
+            correctAnswer: "200"
         },
         {
             question: "97 + 75 = ?",
@@ -190,7 +191,10 @@ window.onload = function () {
             resultsContainer.innerHTML = 'Your time is over.<br>You got ' + numCorrect + ' out of ' + myQuestions.length + '.';
         } else {
             // show number of correct answers out of total
-            resultsContainer.innerHTML = 'You got ' + numCorrect + ' out of ' + myQuestions.length + '. <br> Well done!!!';
+            resultsContainer.innerHTML = 'You got ' + numCorrect + ' out of ' + myQuestions.length + '. <br> Well done on your hard work!!!';
+            restartButton.style.display = 'inline';
+            restartButton.style.float = 'right';
+
         }
     }
 
@@ -259,16 +263,16 @@ window.onload = function () {
             // messagesContainer.innerHTML = "Your answer is empty, please write an answer";
             // messagesContainer.style.color = 'red';
             if (currentSlide === slides.length - 1) {
-                    messagesContainer.innerHTML = "";
-                    // show results if it is the last slide. This way I can delete the current message container content.
-                    showResults('false');
-                } else {
-                    // (answerContainer.querySelector(selector) || {}).disabled = true;
-                    (answerContainer.querySelector(selector) || {}).style.backgroundColor = 'white';
-                    // (answerContainer.querySelector(selector) || {}).style.color = 'white';
-                    showSlide(currentSlide + 1);
-                    messagesContainer.innerHTML = ""
-                }
+                messagesContainer.innerHTML = "";
+                // show results if it is the last slide. This way I can delete the current message container content.
+                showResults('false');
+            } else {
+                // (answerContainer.querySelector(selector) || {}).disabled = true;
+                (answerContainer.querySelector(selector) || {}).style.backgroundColor = 'white';
+                // (answerContainer.querySelector(selector) || {}).style.color = 'white';
+                showSlide(currentSlide + 1);
+                messagesContainer.innerHTML = ""
+            }
 
         } else {
             if (myQuestions[currentSlide].correctAnswer.toLowerCase() === userAnswerTrim.toLowerCase()) {
@@ -302,9 +306,44 @@ window.onload = function () {
     previousButton.addEventListener("click", showPreviousSlide);
     nextButton.addEventListener("click", showNextSlide);
 
+    function restartQuizAction() {
+        //   hide the restart button
+        restartButton.style.display = 'none';
+        messagesContainer.innerHTML = '';
+        resultsContainer.innerHTML = '';
+        cleanTextColorBG();
+        showInitialSlide();
+        //    call the first slide - same call as start button
+
+    }
+
+    function cleanTextColorBG() {
+        const answerContainers = quizContainer.querySelectorAll('.answers');
+
+        // keep track of user's answers
+        let numCorrect = 0;
+        // document.getElementById('questions').disabled = true;
+
+        // for each question...
+        myQuestions.forEach((currentQuestion, questionNumber) => {
+
+            // find selected answer
+            const answerContainer = answerContainers[questionNumber];
+            const selector = 'input[name=question' + questionNumber + ']';
+            // if answer is correct
+
+            (answerContainer.querySelector(selector) || {}).disabled = false;
+            // (answerContainer.querySelector(selector) || {}).style.backgroundColor = 'lightgray';
+            answerContainers[questionNumber].style.color = 'lightgreen';
+            (answerContainer.querySelector(selector) || {}).style.backgroundColor = 'white';
+            (answerContainer.querySelector(selector) || {}).style.color = 'black';
+            (answerContainer.querySelector(selector) || {}).value = '';
+        });
+    }
 
     // submitButton.addEventListener('click', showResults);
     // on submit, still call showNextSlide, there I handle if it is the last slide
     submitButton.addEventListener('click', showNextSlide);
     startButton.addEventListener('click', showInitialSlide);
+    restartButton.addEventListener('click', restartQuizAction)
 }

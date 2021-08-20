@@ -4,12 +4,12 @@
     {% include 'header.html' %}
     <link rel="stylesheet" type="text/css" href="../static/quiz.css">
 <!--    {% print(math_level_conf) %}-->
-    {% if math_level_conf == 'general' %}
-        <script type="text/javascript" src="../static/quiz.js"></script>
+    {% if math_level_conf == 'older' %}
+        <script type="text/javascript" src="../static/quiz_older.js"></script>
     {% elif math_level_conf == "younger" %}
         <script type="text/javascript" src="../static/quiz_younger.js"></script>
     {% else %}
-        <script type="text/javascript" src="../static/quiz_older.js"></script>
+        <script type="text/javascript" src="../static/quiz.js"></script>
     {% endif %}
 </head>
 <body>
@@ -28,6 +28,7 @@
             <button id="submit">Submit Answers </button>
             <div id="messages"></div>
             <div id="results"></div>
+            <button id="restart">Restart Quiz</button>
 
         </div>
 

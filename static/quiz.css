@@ -22,6 +22,7 @@ h1#worksheet {
     FONT-SIZE: x-large;
     margin-bottom: 20px;
     text-align: center;
+    margin-top: 30px;
 }
 
 .answers {
@@ -33,8 +34,9 @@ h1#worksheet {
 }
 
 
-#submit, #previous, #next {
+#submit, #previous, #next, #restart {
     display: none;
+    margin-top: 30px;
 }
 
 button {
@@ -63,8 +65,19 @@ button:hover {
     margin: auto;
 }
 
-.slide, .slide_wrapper {
+.slide {
     position: absolute;
+    left: 0px;
+    /*top: 75px;*/
+    width: 100%;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.5s;
+    /*border: 2px solid coral;*/
+}
+.slide_wrapper {
+     /*position: absolute;*/
+    display: block;
     left: 0px;
     top: 75px;
     width: 100%;
@@ -111,11 +124,15 @@ input[type=text]:disabled {
 }
 
 #quiz-time-left {
-    width: 36%;
+    display: block;
+    /*width: 36%;*/
+    right: 0;
     float: right;
     color: red;
     font-weight: bold;
     font-size: 32px;
+    margin-right: 0px;
+    /*background-color: #4CAF50;*/
 }
 #messages{
     font-size: 40px;

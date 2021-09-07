@@ -59,6 +59,18 @@ window.onload = function () {
             correctAnswer: "r = 8"
         },
         {
+            question: "Which integer represents this scenario? <br> Gain of 5 points: <br> -5 or 5?",
+            correctAnswer: "5"
+        },
+        {
+            question: "Which integer represents this scenario? <br> A lift goes down 4 floors: <br> -4 or 4?",
+            correctAnswer: "-4"
+        },
+        {
+            question: "Write an integer that represents this scenario: <br> 3 degrees colder today than yesterday:",
+            correctAnswer: "-3"
+        },
+        {
             question: "8. A corn farm harvested corn for 7 days. They harvested 102 ears of corn each day. <br>How many ears of corn did the farm harvest?",
             correctAnswer: "714"
         },

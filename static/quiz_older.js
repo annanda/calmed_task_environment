@@ -31,16 +31,40 @@ window.onload = function () {
     const myQuestions = [
 
         {
-            question: "1. What value of z is a solution to this equation? <br> z = 6 or z = 7",
-            correctAnswer: "200"
+            question: "1. What value of <i>p</i> is a solution to this equation?<br> <br> 2<i>p</i> = 2 <br> <br> p = 1 or p = 2",
+            correctAnswer: "p = 1"
         },
         {
-            question: "2. What value of z is a solution to this equation? <br> z = 6 or z = 7",
-            correctAnswer: "200"
+            question: "2. What value of <i>a</i> is a solution to this equation?<br> <br> 6 + <i>a</i> = 13 <br> <br> a = 7 or a = 9",
+            correctAnswer: "a = 7"
         },
         {
-            question: "3. What value of z is a solution to this equation? <br> z = 6 or z = 7",
-            correctAnswer: "200"
+            question: "3. What value of <i>d</i> is a solution to this equation? <br> <br> <i>d</i> – 10 = 2 <br> <br> d = 11 or d = 12",
+            correctAnswer: "d = 12"
+        },
+        {
+            question: "4. What value of <i>p</i> is a solution to this equation? <br> <br> 7 + <i>p</i> = 16 <br> <br> p = 7 or p = 9",
+            correctAnswer: "p = 9"
+        },
+        {
+            question: "5. What value of <i>u</i> is a solution to this equation? <br> <br> 15 = 4 + <i>u</i> <br> <br> u = 10 or u = 11",
+            correctAnswer: "u = 11"
+        },
+        {
+            question: "6. What value of <i>r</i> is a solution to this equation? <br> <br> <i>r</i> + 4 = 14 <br> <br> r = 10 or r = 12",
+            correctAnswer: "r = 10"
+        },
+        {
+            question: "7. What value of <i>r</i> is a solution to this equation? <br> <br> 13 + <i>r</i>  = 21 <br> <br> r = 8 or r = 9",
+            correctAnswer: "r = 8"
+        },
+        {
+            question: "8. A corn farm harvested corn for 7 days. They harvested 102 ears of corn each day. <br>How many ears of corn did the farm harvest?",
+            correctAnswer: "714"
+        },
+        {
+            question: "9. Marie picked 6 barrels of cherries. She put 52 cherries in each barrel. <br>How many cherries did Marie pick in all?",
+            correctAnswer: "312"
         },
 
     ];

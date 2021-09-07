@@ -31,6 +31,42 @@ window.onload = function () {
     const myQuestions = [
 
         {
+            question: "Which odd number comes right before 75?",
+            correctAnswer: "73"
+        },
+        {
+            question: "Which even number comes right after 46?",
+            correctAnswer: "48"
+        },
+        {
+            question: "Which even number comes right before 38?",
+            correctAnswer: "36"
+        },
+        {
+            question: "Which even number comes right before 99?",
+            correctAnswer: "98"
+        },
+        {
+            question: "Is 81 + 15 even or odd?",
+            correctAnswer: "even"
+        },
+        {
+            question: "Is 64 + 32 even or odd?",
+            correctAnswer: "even"
+        },
+        {
+            question: "Is 41 − 3 even or odd?",
+            correctAnswer: "even"
+        },
+        {
+            question: "Is 43 − 30 even or odd?",
+            correctAnswer: "odd"
+        },
+        {
+            question: "Is 17 + 58 even or odd?",
+            correctAnswer: "odd"
+        },
+        {
             question: "141 + 59 = ?",
             correctAnswer: "200"
         },
@@ -77,27 +113,6 @@ window.onload = function () {
         {
             question: "_____ hundreds = 900 units",
             correctAnswer: "9"
-        },
-        //6th class
-        {
-            question: "Which integer represents this scenario? <br> Gain of 5 points: <br> -5 or 5?",
-            correctAnswer: "5"
-        },
-        {
-            question: "Which integer represents this scenario? <br> A lift goes down 4 floors: <br> -4 or 4?",
-            correctAnswer: "-4"
-        },
-        {
-            question: "Write an integer that represents this scenario: <br> 3 degrees colder today than yesterday:",
-            correctAnswer: "-3"
-        },
-        {
-            question: "A corn farm harvested corn for 7 days. They harvested 102 ears of corn each day. <br>How many ears of corn did the farm harvest?",
-            correctAnswer: "714"
-        },
-        {
-            question: "Marie picked 6 barrels of cherries. She put 52 cherries in each barrel. <br>How many cherries did Marie pick in all?",
-            correctAnswer: "312"
         },
 
     ];

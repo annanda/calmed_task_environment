@@ -11,13 +11,18 @@ three_seconds = one_second * 3
 three_and_half = (3 * one_minute) + (30 * one_second)
 temp_time = five_minutes * 1
 two_minutes = 2 * one_minute
+two_and_half_minutes = two_minutes + (30 * one_second)
+three_minutes = 3 * one_minute
 thirty_five_seconds = 35 * one_second
 forty_seconds = 40 * one_second
-TIME_ON_PAGE_TASK = config('TIME_ON_PAGE_TASK', default=one_minute)
-TIME_ON_GAME = config('TIME_ON_GAME', default=two_minutes)
-TIME_ON_PAGE_CALMING = config('TIME_ON_PAGE_CALMING', default=two_minutes)
-TIME_ON_PAGE_TO_READ = config('TIME_ON_PAGE_TO_READ', default=thirty_five_seconds)
-TIME_ON_PAGE_MOOD = config('TIME_ON_PAGE_MOOD', default=forty_seconds)
+one_and_half_minutes = 90000
+twenty_seconds = 20 * one_second
+fifteen_seconds = 15 * one_second
+TIME_ON_PAGE_TASK = config('TIME_ON_PAGE_TASK', default=three_minutes)
+TIME_ON_GAME = config('TIME_ON_GAME', default=two_and_half_minutes)
+TIME_ON_PAGE_CALMING = config('TIME_ON_PAGE_CALMING', default=one_and_half_minutes)
+TIME_ON_PAGE_TO_READ = config('TIME_ON_PAGE_TO_READ', default=fifteen_seconds)
+TIME_ON_PAGE_MOOD = config('TIME_ON_PAGE_MOOD', default=twenty_seconds)
 INDEX_BG_IMAGE = config('INDEX_BG_IMAGE', default='static/images/start_image.jpeg')
 CALMING_VIDEO_1 = config('CALMING_VIDEO_1',
                          default='https://www.youtube.com/embed/POP5BzZLOKk?controls=0&start=21&autoplay=1')

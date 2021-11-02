@@ -3,3 +3,4 @@ static/videos/*
 static/audio/*
 static/data/*
 .env
+load_env.sh

@@ -138,7 +138,6 @@ window.onload = function () {
 
         // for each question...
         myQuestions.forEach((currentQuestion, questionNumber) => {
-            is_the_answer_correct = false;
 
             // find selected answer
             const answerContainer = answerContainers[questionNumber];
@@ -153,20 +152,16 @@ window.onload = function () {
             let list_correct_answers = currentQuestion.correctAnswer
             // if (userAnswerTrim.toLowerCase() === currentQuestion.correctAnswer.toLowerCase()) {
 
-            for (let i = 0; i < list_correct_answers.length; i++) {
-                if (userAnswerTrim.toLowerCase() === list_correct_answers[i].toLowerCase()) {
-                    numCorrect++;
-                    // color the answers green
-                    answerContainers[questionNumber].style.color = 'lightgreen';
-                    (answerContainer.querySelector(selector) || {}).style.backgroundColor = 'green';
-                    (answerContainer.querySelector(selector) || {}).style.color = 'white';
-                    is_the_answer_correct = true;
-                    break;
-                }
-            }
-            // if answer is wrong or blank
-            if (is_the_answer_correct === false){
-                // color the answers red
+            is_the_answer_correct = false;
+            is_the_answer_correct = checkAnswer(userAnswerTrim.toLowerCase(), list_correct_answers)
+            if (is_the_answer_correct == true) {
+                numCorrect++;
+                // color the answers green
+                answerContainers[questionNumber].style.color = 'lightgreen';
+                (answerContainer.querySelector(selector) || {}).style.backgroundColor = 'green';
+                (answerContainer.querySelector(selector) || {}).style.color = 'white';
+            } else {
+                // if answer is wrong or blank
                 (answerContainer.querySelector(selector) || {}).style.backgroundColor = 'red';
                 (answerContainer.querySelector(selector) || {}).style.color = 'white';
                 answerContainers[questionNumber].style.color = 'red';
@@ -237,12 +232,12 @@ window.onload = function () {
         }
     }
 
-    function checkAnswer(user_answer, question_answers){
+    function checkAnswer(user_answer, question_answers) {
         for (let i = 0; i < question_answers.length; i++) {
-                if (user_answer === question_answers[i].toLowerCase()) {
-                    return true
-                }
+            if (user_answer === question_answers[i].toLowerCase()) {
+                return true
             }
+        }
         return false
     }
 
@@ -272,7 +267,7 @@ window.onload = function () {
         } else {
             is_the_answer_correct = checkAnswer(userAnswerTrim.toLowerCase(), myQuestions[currentSlide].correctAnswer)
             if (is_the_answer_correct == true) {
-            // if (myQuestions[currentSlide].correctAnswer.toLowerCase() === userAnswerTrim.toLowerCase()) {
+                // if (myQuestions[currentSlide].correctAnswer.toLowerCase() === userAnswerTrim.toLowerCase()) {
                 if (currentSlide === slides.length - 1) {
                     messagesContainer.innerHTML = "";
                     // show results if it is the last slide. This way I can delete the current message container content.

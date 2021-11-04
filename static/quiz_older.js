@@ -233,8 +233,11 @@ window.onload = function () {
     }
 
     function checkAnswer(user_answer, question_answers) {
+        user_answer = user_answer.replace(/\s/g, '');
         for (let i = 0; i < question_answers.length; i++) {
-            if (user_answer === question_answers[i].toLowerCase()) {
+            let current_possible_answer = question_answers[i].toLowerCase()
+            current_possible_answer = current_possible_answer.replace(/\s/g, '');
+            if (user_answer === current_possible_answer) {
                 return true
             }
         }

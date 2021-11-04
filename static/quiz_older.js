@@ -13,12 +13,13 @@ window.onload = function () {
     let c_minutes = parseInt(total_seconds / 60);
     let c_seconds = parseInt(total_seconds % 60);
     let timer;
+    let is_the_answer_correct;
 
     function CheckTime() {
         document.getElementById("quiz-time-left").innerHTML = 'Time Left: <br>' + c_minutes + ' minutes ' + c_seconds + ' seconds ';
 
         if (total_seconds <= 0) {
-            showResults('true');
+            showResultsInTheEnd('true');
         } else {
             total_seconds = total_seconds - 1;
             c_minutes = parseInt(total_seconds / 60);
@@ -32,51 +33,51 @@ window.onload = function () {
 
         {
             question: "1. What value of <i>p</i> is a solution to this equation?<br> <br> 2<i>p</i> = 2 <br> <br> p = 1 or p = 2",
-            correctAnswer: "p = 1"
+            correctAnswer: ["p = 1", '1']
         },
         {
             question: "2. What value of <i>a</i> is a solution to this equation?<br> <br> 6 + <i>a</i> = 13 <br> <br> a = 7 or a = 9",
-            correctAnswer: "a = 7"
+            correctAnswer: ["a = 7"]
         },
         {
             question: "3. What value of <i>d</i> is a solution to this equation? <br> <br> <i>d</i> – 10 = 2 <br> <br> d = 11 or d = 12",
-            correctAnswer: "d = 12"
+            correctAnswer: ["d = 12"]
         },
         {
             question: "4. What value of <i>p</i> is a solution to this equation? <br> <br> 7 + <i>p</i> = 16 <br> <br> p = 7 or p = 9",
-            correctAnswer: "p = 9"
+            correctAnswer: ["p = 9"]
         },
         {
             question: "5. What value of <i>u</i> is a solution to this equation? <br> <br> 15 = 4 + <i>u</i> <br> <br> u = 10 or u = 11",
-            correctAnswer: "u = 11"
+            correctAnswer: ["u = 11"]
         },
         {
             question: "6. What value of <i>r</i> is a solution to this equation? <br> <br> <i>r</i> + 4 = 14 <br> <br> r = 10 or r = 12",
-            correctAnswer: "r = 10"
+            correctAnswer: ["r = 10"]
         },
         {
             question: "7. What value of <i>r</i> is a solution to this equation? <br> <br> 13 + <i>r</i>  = 21 <br> <br> r = 8 or r = 9",
-            correctAnswer: "r = 8"
+            correctAnswer: ["r = 8"]
         },
         {
             question: "Which integer represents this scenario? <br> Gain of 5 points: <br> -5 or 5?",
-            correctAnswer: "5"
+            correctAnswer: ["5"]
         },
         {
             question: "Which integer represents this scenario? <br> A lift goes down 4 floors: <br> -4 or 4?",
-            correctAnswer: "-4"
+            correctAnswer: ["-4"]
         },
         {
             question: "Write an integer that represents this scenario: <br> 3 degrees colder today than yesterday:",
-            correctAnswer: "-3"
+            correctAnswer: ["-3"]
         },
         {
             question: "8. A corn farm harvested corn for 7 days. They harvested 102 ears of corn each day. <br>How many ears of corn did the farm harvest?",
-            correctAnswer: "714"
+            correctAnswer: ["714"]
         },
         {
             question: "9. Marie picked 6 barrels of cherries. She put 52 cherries in each barrel. <br>How many cherries did Marie pick in all?",
-            correctAnswer: "312"
+            correctAnswer: ["312"]
         },
 
     ];
@@ -125,7 +126,7 @@ window.onload = function () {
 
     }
 
-    function showResults(timer_out) {
+    function showResultsInTheEnd(timer_out) {
         // to stop the timer
         clearInterval(timer);
         // gather answer containers from our quiz
@@ -137,6 +138,7 @@ window.onload = function () {
 
         // for each question...
         myQuestions.forEach((currentQuestion, questionNumber) => {
+            is_the_answer_correct = false;
 
             // find selected answer
             const answerContainer = answerContainers[questionNumber];
@@ -148,17 +150,22 @@ window.onload = function () {
 
             (answerContainer.querySelector(selector) || {}).disabled = true;
             // (answerContainer.querySelector(selector) || {}).style.backgroundColor = 'lightgray';
-            if (userAnswerTrim.toLowerCase() === currentQuestion.correctAnswer.toLowerCase()) {
+            let list_correct_answers = currentQuestion.correctAnswer
+            // if (userAnswerTrim.toLowerCase() === currentQuestion.correctAnswer.toLowerCase()) {
 
-                // add to the number of correct answers
-                numCorrect++;
-                // color the answers green
-                answerContainers[questionNumber].style.color = 'lightgreen';
-                (answerContainer.querySelector(selector) || {}).style.backgroundColor = 'green';
-                (answerContainer.querySelector(selector) || {}).style.color = 'white';
+            for (let i = 0; i < list_correct_answers.length; i++) {
+                if (userAnswerTrim.toLowerCase() === list_correct_answers[i].toLowerCase()) {
+                    numCorrect++;
+                    // color the answers green
+                    answerContainers[questionNumber].style.color = 'lightgreen';
+                    (answerContainer.querySelector(selector) || {}).style.backgroundColor = 'green';
+                    (answerContainer.querySelector(selector) || {}).style.color = 'white';
+                    is_the_answer_correct = true;
+                    break;
+                }
             }
             // if answer is wrong or blank
-            else {
+            if (is_the_answer_correct === false){
                 // color the answers red
                 (answerContainer.querySelector(selector) || {}).style.backgroundColor = 'red';
                 (answerContainer.querySelector(selector) || {}).style.color = 'white';
@@ -230,6 +237,15 @@ window.onload = function () {
         }
     }
 
+    function checkAnswer(user_answer, question_answers){
+        for (let i = 0; i < question_answers.length; i++) {
+                if (user_answer === question_answers[i].toLowerCase()) {
+                    return true
+                }
+            }
+        return false
+    }
+
     function showNextSlide() {
         // showSlide(currentSlide + 1);
         const answerContainers = quizContainer.querySelectorAll('.answers');
@@ -244,7 +260,7 @@ window.onload = function () {
             if (currentSlide === slides.length - 1) {
                 messagesContainer.innerHTML = "";
                 // show results if it is the last slide. This way I can delete the current message container content.
-                showResults('false');
+                showResultsInTheEnd('false');
             } else {
                 // (answerContainer.querySelector(selector) || {}).disabled = true;
                 (answerContainer.querySelector(selector) || {}).style.backgroundColor = 'white';
@@ -254,11 +270,13 @@ window.onload = function () {
             }
 
         } else {
-            if (myQuestions[currentSlide].correctAnswer.toLowerCase() === userAnswerTrim.toLowerCase()) {
+            is_the_answer_correct = checkAnswer(userAnswerTrim.toLowerCase(), myQuestions[currentSlide].correctAnswer)
+            if (is_the_answer_correct == true) {
+            // if (myQuestions[currentSlide].correctAnswer.toLowerCase() === userAnswerTrim.toLowerCase()) {
                 if (currentSlide === slides.length - 1) {
                     messagesContainer.innerHTML = "";
                     // show results if it is the last slide. This way I can delete the current message container content.
-                    showResults('false');
+                    showResultsInTheEnd('false');
                 } else {
                     (answerContainer.querySelector(selector) || {}).disabled = true;
                     (answerContainer.querySelector(selector) || {}).style.backgroundColor = 'green';
@@ -320,7 +338,7 @@ window.onload = function () {
         });
     }
 
-    // submitButton.addEventListener('click', showResults);
+    // submitButton.addEventListener('click', showResultsInTheEnd);
     // on submit, still call showNextSlide, there I handle if it is the last slide
     submitButton.addEventListener('click', showNextSlide);
     startButton.addEventListener('click', showInitialSlide);

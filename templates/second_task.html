@@ -36,9 +36,14 @@
 </div>
 <script>
     time_to_the_next = JSON.parse({{ time_on_page_to_read | tojson}});
+    {% if session_number == 2 %}
+        next_window_page = 'game_2'
+    {% else %}
+        next_window_page = 'game'
+    {% endif %}
     setTimeout(function () {
         // window.location.href = 'calming_content_2';
-        window.location.href = 'game';
+        window.location.href = next_window_page;
     }, time_to_the_next);
 </script>
 </body>

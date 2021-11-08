@@ -36,40 +36,40 @@ window.onload = function () {
             correctAnswer: ["p = 1", '1']
         },
         {
-            question: "2. What value of <i>a</i> is a solution to this equation?<br> <br> 6 + <i>a</i> = 13 <br> <br> a = 7 or a = 9",
-            correctAnswer: ["a = 7"]
+            question: "2. What value of <i>a</i> is a solution to this equation?<br> <br> 6 + <i>a</i> = 13 <br> <br>",
+            correctAnswer: ["a = 7", "7"]
         },
         {
-            question: "3. What value of <i>d</i> is a solution to this equation? <br> <br> <i>d</i> – 10 = 2 <br> <br> d = 11 or d = 12",
-            correctAnswer: ["d = 12"]
+            question: "3. What value of <i>d</i> is a solution to this equation? <br> <br> <i>d</i> – 10 = 2 <br> <br>",
+            correctAnswer: ["d = 12", "12"]
         },
         {
-            question: "4. What value of <i>p</i> is a solution to this equation? <br> <br> 7 + <i>p</i> = 16 <br> <br> p = 7 or p = 9",
-            correctAnswer: ["p = 9"]
+            question: "4. What value of <i>p</i> is a solution to this equation? <br> <br> 7 + <i>p</i> = 16 <br> <br>",
+            correctAnswer: ["p = 9", "9"]
         },
         {
-            question: "5. What value of <i>u</i> is a solution to this equation? <br> <br> 15 = 4 + <i>u</i> <br> <br> u = 10 or u = 11",
-            correctAnswer: ["u = 11"]
+            question: "5. What value of <i>u</i> is a solution to this equation? <br> <br> 15 = 4 + <i>u</i> <br> <br>",
+            correctAnswer: ["u = 11", "11"]
         },
         {
-            question: "6. What value of <i>r</i> is a solution to this equation? <br> <br> <i>r</i> + 4 = 14 <br> <br> r = 10 or r = 12",
-            correctAnswer: ["r = 10"]
+            question: "6. What value of <i>r</i> is a solution to this equation? <br> <br> <i>r</i> + 4 = 14 <br> <br>",
+            correctAnswer: ["r = 10", "10"]
         },
         {
-            question: "7. What value of <i>r</i> is a solution to this equation? <br> <br> 13 + <i>r</i>  = 21 <br> <br> r = 8 or r = 9",
-            correctAnswer: ["r = 8"]
+            question: "7. What value of <i>r</i> is a solution to this equation? <br> <br> 13 + <i>r</i>  = 21 <br> <br>",
+            correctAnswer: ["r = 8", "8"]
         },
         {
             question: "Which integer represents this scenario? <br> Gain of 5 points: <br> -5 or 5?",
-            correctAnswer: ["5"]
+            correctAnswer: ["5", "cinco", "+5", "plus 5", "plus five"]
         },
         {
-            question: "Which integer represents this scenario? <br> A lift goes down 4 floors: <br> -4 or 4?",
-            correctAnswer: ["-4"]
+            question: "Which integer represents this scenario? <br> A lift goes down 4 floors: <br>",
+            correctAnswer: ["-4", "minus four", "minus 4"]
         },
         {
             question: "Write an integer that represents this scenario: <br> 3 degrees colder today than yesterday:",
-            correctAnswer: ["-3"]
+            correctAnswer: ["-3", "minus 3", "minus three"]
         },
         {
             question: "8. A corn farm harvested corn for 7 days. They harvested 102 ears of corn each day. <br>How many ears of corn did the farm harvest?",
@@ -78,6 +78,54 @@ window.onload = function () {
         {
             question: "9. Marie picked 6 barrels of cherries. She put 52 cherries in each barrel. <br>How many cherries did Marie pick in all?",
             correctAnswer: ["312"]
+        },
+        {
+            question: "141 + 59 = ?",
+            correctAnswer: ["200"]
+        },
+        {
+            question: "97 + 75 = ?",
+            correctAnswer: ["172"]
+        },
+        {
+            question: "If 21 x 25 = 525, then <br> <br> 525 ÷ _____ = 25",
+            correctAnswer: ["21"]
+        },
+        {
+            question: "Bill spent less money than Bryce but more money than Julia. <br>Who spent more money, Julia or Bryce?",
+            correctAnswer: ["Bryce"]
+        },
+        {
+            question: "Nina earned less money than Ann but more money than Grace. <br>Who earned the most money?",
+            correctAnswer: ["Ann"]
+        },
+        {
+            question: "Multiply: 12 x 3",
+            correctAnswer: ["36"]
+        },
+        {
+            question: "How would you write 15 as a Roman numeral?",
+            correctAnswer: ["XV"]
+        },
+        {
+            question: "What number does this Roman numeral represent? XXX",
+            correctAnswer: ["30"]
+        },
+        {
+            question: "What number does this Roman numeral represent? XVIII",
+            correctAnswer: ["28"]
+        },
+        {
+            question: "How would you write 31 as a Roman numeral?",
+            correctAnswer: ["XXXI"]
+        },
+        {
+            question: "6 tens corresponds to _____ units.",
+            correctAnswer: ["60", "sixty"]
+        },
+        {
+            question: "_____ hundreds = 900 units",
+            correctAnswer: ["9", "nine"]
         },
 
     ];

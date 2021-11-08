@@ -19,7 +19,7 @@ one_and_half_minutes = 90000
 twenty_seconds = 20 * one_second
 fifteen_seconds = 15 * one_second
 TIME_ON_PAGE_TASK = config('TIME_ON_PAGE_TASK', default=three_minutes)
-TIME_ON_GAME = config('TIME_ON_GAME', default=two_and_half_minutes)
+TIME_ON_GAME = config('TIME_ON_GAME', default=three_minutes)
 TIME_ON_PAGE_CALMING = config('TIME_ON_PAGE_CALMING', default=one_and_half_minutes)
 TIME_ON_PAGE_TO_READ = config('TIME_ON_PAGE_TO_READ', default=fifteen_seconds)
 TIME_ON_PAGE_MOOD = config('TIME_ON_PAGE_MOOD', default=twenty_seconds)

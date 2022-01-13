@@ -7,3 +7,4 @@
 *.idea
 *.mp4
 static/data/
+docker-compose.override.yml

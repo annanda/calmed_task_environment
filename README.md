@@ -13,21 +13,54 @@ The system includes:
 
 ## User Manual
 
+### Development
+
+1. Prepare the virtual environment (Create and activate virtual environment with venv).
+
+`python -m venv ./venv`
+
+`source ./venv/bin/activate`
+
+2. Run the script
+
+`python app.py`
+
+### Deployment with Docker
+
+1. Build the images
+
+`docker compose build`
+
+2. Start the services
+
+`docker compose up -d`
+
 A user can configure each task's content and time by adding/changing the variables values in
 a `.env` file.
 
 The `example.env` file contains examples of variable and values format.
 
-### Copyright Content Used
+## Licence
+
+This repository is released under dual-licencing:
+
+For non-commercial use of the Software, it is released under the [GPL-3.0 License](GPL-3.md).
+
+For commercial use of the Software, you are required to contact the University of Galway to arrange a commercial
+licence.
+
+Please refer to [LICENSE.md](LICENSE.md) file for details on the licence.
+
+### Copyrighted Content Used
 
 - Youtube Videos:
-  - [Calming Video 1]()
-  - [Calming Video 2]()
-  - [Calming Video 3]()
-  - [Calming Video 4]()
-  - [Green Video]()
-  - [Blue Video]()
+    - [Calming Video 1](https://www.youtube.com/embed/POP5BzZLOKk?controls=0&start=21&autoplay=1)
+    - [Calming Video 2](https://www.youtube.com/embed/qUJ6nGK7wrw?controls=0&amp;start=17&autoplay=1)
+    - [Calming Video 3](https://www.youtube.com/embed/y4BLQW1lCDE?controls=0&amp;start=14&autoplay=1)
+    - [Calming Video 4](https://www.youtube.com/embed/TlQ1EEbBlcI?controls=0&amp;start=21&autoplay=1)
+    - [Green Video](https://youtu.be/VB4CCHHYOqY?si=KldC4g2z7MJOWQcr)
+    - [Blue Video](https://youtu.be/lVrYV0odeFY?si=lUk1S8TDQOlgqUca)
 
 - Games:
-  - Pacman 
-  - [Clumsy Bird](https://github.com/ellisonleao/clumsy-bird) by Ellison Leao
+    - [Pacman](https://pacman.com/en/history/)
+    - [Clumsy Bird](https://github.com/ellisonleao/clumsy-bird) by Ellison Leao

@@ -18,7 +18,7 @@ educational, and non-commercial purposes.
 
  Copyright (C) 2024 University of Galway
 
-The full text of the [GPL-3.0 License](GLP-3.md) is provided in the [accompanying documentation](GLP-3.md) and is also available
+The full text of the [GPL-3.0 License](GPL-3.md) is provided in the [accompanying documentation](GPL-3.md) and is also available
 at https://opensource.org/license/gpl-3-0/.
 
 2. For **commercial use** of the Software, you are required to contact the University of Galway to

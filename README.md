@@ -58,9 +58,17 @@ Please refer to [LICENSE.md](LICENSE.md) file for details on the licence.
     - [Calming Video 2](https://www.youtube.com/embed/qUJ6nGK7wrw?controls=0&amp;start=17&autoplay=1)
     - [Calming Video 3](https://www.youtube.com/embed/y4BLQW1lCDE?controls=0&amp;start=14&autoplay=1)
     - [Calming Video 4](https://www.youtube.com/embed/TlQ1EEbBlcI?controls=0&amp;start=21&autoplay=1)
-    - [Green Video](https://youtu.be/VB4CCHHYOqY?si=KldC4g2z7MJOWQcr)
-    - [Blue Video](https://youtu.be/lVrYV0odeFY?si=lUk1S8TDQOlgqUca)
+    - [Green Zone Video](https://youtu.be/VB4CCHHYOqY?si=KldC4g2z7MJOWQcr)
+    - [Blue Zone Video](https://youtu.be/lVrYV0odeFY?si=lUk1S8TDQOlgqUca)
 
 - Games:
     - [Pacman](https://pacman.com/en/history/)
     - [Clumsy Bird](https://github.com/ellisonleao/clumsy-bird) by Ellison Leao
+
+----
+
+Author: Annanda Sousa
+
+Author's contact: [annanda.sousa@gmail.com](mailto:annanda.sousa@gmail.com)
+
+----

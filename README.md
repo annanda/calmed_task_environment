@@ -12,7 +12,7 @@ The system includes:
 - The systems also record into a local database the accessed time of each task to allow later recovering of which
   eliciting task the child was interacting with during a given moment in the study session.
 
-The Task Environment system can be accessed at http://task-environment.datascienceinstitute.ie/ 
+The Task Environment system can be accessed at http://task-environment.datascienceinstitute.ie/
 
 ## User Manual
 
@@ -67,6 +67,15 @@ Please refer to [LICENSE.md](LICENSE.md) file for details on the licence.
 - Games:
     - [Pacman](https://pacman.com/en/history/)
     - [Clumsy Bird](https://github.com/ellisonleao/clumsy-bird) by Ellison Leao
+
+## Citation
+
+If you use any of the resources provided on this repository in any of your publications we ask you to cite the following
+work:
+
+Sousa, Annanda, et al. "**Introducing CALMED: Multimodal Annotated Dataset for Emotion Detection in Children with
+Autism**."
+International Conference on Human-Computer Interaction. Cham: Springer Nature Switzerland, 2023.
 
 ----
 

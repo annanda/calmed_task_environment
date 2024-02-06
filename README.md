@@ -54,7 +54,7 @@ licence.
 
 Please refer to [LICENSE.md](LICENSE.md) file for details on the licence.
 
-### Copyrighted Content Used
+### Copyright Content Used
 
 - Youtube Videos:
     - [Calming Video 1](https://www.youtube.com/embed/POP5BzZLOKk?controls=0&start=21&autoplay=1)

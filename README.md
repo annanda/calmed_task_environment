@@ -8,6 +8,7 @@ The system includes:
 - Four different tasks to elicit each emotional zone (i.e green, yellow, red and blue);
     - The yellow zone elicitation task includes two versions, one for each session.
 - Four different calming content to help the child to calm and regulate their emotions between the tasks;
+- The system automatically change activities based on set time per activity.
 - The systems also record into a local database the accessed time of each task to allow later recovering of which
   eliciting task the child was interacting with during a given moment in the study session.
 

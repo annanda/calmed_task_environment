@@ -45,14 +45,8 @@ The `example.env` file contains examples of variable and values format.
 
 ## Licence
 
-This repository is released under dual-licencing:
+This repository is released under the [GPL-3.0 License](LICENSE.md).
 
-For non-commercial use of the Software, it is released under the [GPL-3.0 License](GPL-3.md).
-
-For commercial use of the Software, you are required to contact the University of Galway to arrange a commercial
-licence.
-
-Please refer to [LICENSE.md](LICENSE.md) file for details on the licence.
 
 ### Copyright Content Used in This Project
 
